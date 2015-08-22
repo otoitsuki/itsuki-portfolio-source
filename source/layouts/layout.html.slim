@@ -1,0 +1,59 @@
+doctype 5
+html lang="zh-tw" 
+  head
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width initial-scale=1"
+    title 
+        = ( current_page.data.title ? current_page.data.title : site_metadata["title"])
+    meta http-equiv="X-UA-Compatible" content="IE=edge"
+    meta name="description" content= site_metadata["og-image"]  
+    meta name="author" content= site_metadata["author"]
+
+    meta content= site_metadata["title"] property="og:title"
+    meta content= site_metadata["name"] property="og:site_name"
+    meta content= site_metadata["url"] property="og:url"
+    meta content= site_metadata["description"] property="og:description"
+    meta content= site_metadata["og-image"] property="og:image"
+    meta content= site_metadata["og-type"] property="og:type"
+
+    link href="favicon.ico" rel="icon" type="imagex-icon"
+    link href="favicon.ico" rel="shortcut icon" type="imagex-icon"
+
+    // 如果網站不是裝在根目錄下，那麼CSS和JS都要改成一般相對路徑
+    // 狀況一：有多層html，則做兩個header來對應子資料夾下的網頁
+    // EX：
+    // head
+    //  = render yield:layout_head ←同層資料夾用這個
+    //  = render yield:layout_head_second ←子資料夾用這個
+    // 方案二：只是無法使用根目錄，html通通同一層，土法煉鋼
+    // EX:
+    link rel="stylesheet" href="styles/style.css"
+
+    // 一般根目錄網站方案
+    / = stylesheet_link_tag "style"
+    
+    / selectivizr本機端只能夠搭配本機端的jquery library，有用到selectivizr就兩個都用本機端，沒有用到就接Google CDN
+    / = javascript_include_tag "jquery-1.11.1"
+    /[if (gte IE 6)&(lte IE 8)]
+      / = javascript_include_tag "selectivizr"
+    /[if lt IE 9]
+      script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"
+      
+    / = javascript_include_tag "analytics.js"
+  body
+    .page
+
+      = yield
+    
+    
+
+    script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"
+    / /[if IE]
+    /   = render partial="/partials/pie-setup"
+    /   = javascript_include_tag "/scripts/PIE"
+    / = javascript_include_tag "/scripts/main"
+    
+    = yield_content :page_javascript
+    
+
+      
