@@ -27,7 +27,7 @@ html lang="zh-tw"
     //  = render yield:layout_head_second ←子資料夾用這個
     // 方案二：只是無法使用根目錄，html通通同一層，土法煉鋼
     // EX:
-    link rel="stylesheet" href="styles/style.css"
+    link rel="stylesheet" href="assets/styles/style.css"
 
     // 一般根目錄網站方案
     / = stylesheet_link_tag "style"
@@ -49,9 +49,9 @@ html lang="zh-tw"
 
     script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"
     / /[if IE]
-    /   = render partial="/partials/pie-setup"
-    /   = javascript_include_tag "/scripts/PIE"
-    / = javascript_include_tag "/scripts/main"
+    /   = partial "pie-setup"
+    /   = javascript_include_tag "assets/scripts/PIE"
+    / = javascript_include_tag "assets/scripts/main"
     
     = yield_content :page_javascript
     

@@ -1,16 +1,19 @@
 # View Middleman configurations:
 # http://localhost:4567/__middleman/config/
+
 require "helpers/view_helpers.rb"
 helpers ViewHelpers
 
+
+
 # Slim HTML
 # ----------------------------------------------
-::Slim::Engine.set_options :format  => :html
-
+Slim::Engine.disable_option_validator!
+set :slim, { :pretty => true, :sort_attrs => false, :format => :html }
 
 # i18n
 # ----------------------------------------------
-activate :i18n, :mount_at_root => :'zh-tw'
+# activate :i18n, :mount_at_root => :'zh-tw'
 
 
 # Livereload
@@ -31,11 +34,14 @@ end
 
 # Configure assets directories
 # ----------------------------------------------
-set :css_dir, 'assets/stylesheets'
-set :js_dir, 'assets/javascripts'
+set :css_dir, 'assets/styles'
+set :js_dir, 'assets/scripts'
 set :images_dir, 'assets/images'
 set :fonts_dir, 'assets/fonts'
-set :partials, 'partials'
+set :partials_dir, 'partials'
+
+# Configure SASS
+# ----------------------------------------------
 
 
 # Other configurations
@@ -61,6 +67,15 @@ end
 # Build-specific configuration
 # ----------------------------------------------
 configure :build do
+
+  compass_config do |config|
+    config.output_style = :compressed
+    config.line_comments = false
+  end
+
+  # Output a pretty html
+  ::Slim::Engine.set_options :pretty => true
+  
   # Use relative URLs
   activate :directory_indexes
 
