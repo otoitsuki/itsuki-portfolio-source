@@ -36,7 +36,7 @@ end
 # ----------------------------------------------
 set :css_dir, 'assets/styles'
 set :js_dir, 'assets/scripts'
-set :images_dir, 'assets/images'
+set :images_dir, 'images'
 set :fonts_dir, 'assets/fonts'
 set :partials_dir, 'partials'
 
