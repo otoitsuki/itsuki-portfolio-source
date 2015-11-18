@@ -1,6 +1,6 @@
 # View Middleman configurations:
 # http://localhost:4567/__middleman/config/
-
+require 'slim/include'
 require "helpers/view_helpers.rb"
 helpers ViewHelpers
 
@@ -36,9 +36,9 @@ end
 # ----------------------------------------------
 set :css_dir, 'assets/styles'
 set :js_dir, 'assets/scripts'
-set :images_dir, 'images'
+set :images_dir, 'assets/images'
 set :fonts_dir, 'assets/fonts'
-set :partials_dir, 'partials'
+set :partials_dir, 'snippets'
 
 # Configure SASS
 # ----------------------------------------------
@@ -79,11 +79,11 @@ configure :build do
 
   # Output a pretty html
   ::Slim::Engine.set_options :pretty => true
-  
+
   # Use relative URLs
   # activate :directory_indexes
   activate :relative_assets
-  
+
   # Activate gzip
   # activate :gzip
 
