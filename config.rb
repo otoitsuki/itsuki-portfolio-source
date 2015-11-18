@@ -52,7 +52,8 @@ set :trailing_slash, false
 # Development-specific configuration
 # ----------------------------------------------
 configure :development do
-  activate :directory_indexes
+
+  # activate :directory_indexes
 
   set :debug_assets, true
 
@@ -60,7 +61,10 @@ configure :development do
   ::Slim::Engine.set_options :pretty => true
 
   # Activate autoprefixer
-  activate :autoprefixer
+  activate :autoprefixer do |config|
+  config.browsers = ['last 4 versions', 'Explorer >= 9']
+  end
+
 end
 
 
@@ -77,10 +81,11 @@ configure :build do
   ::Slim::Engine.set_options :pretty => true
   
   # Use relative URLs
-  activate :directory_indexes
-
+  # activate :directory_indexes
+  activate :relative_assets
+  
   # Activate gzip
-  activate :gzip
+  # activate :gzip
 
   # Minify CSS on build
   activate :minify_css
@@ -95,5 +100,8 @@ configure :build do
   activate :cache_buster
 
   # Activate autoprefixer
-  activate :autoprefixer
+  activate :autoprefixer do |config|
+  config.browsers = ['last 4 versions', 'Explorer >= 9']
+  end
+
 end
