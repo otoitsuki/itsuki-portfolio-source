@@ -9,7 +9,7 @@ html lang="zh-tw"
     meta name="description" content= site_metadata["og-image"]  
     meta name="author" content= site_metadata["author"]
 
-    meta content=( current_page.data.title ? current_page.data.title : site_metadata["title"]) property="og:title"
+    meta content= site_metadata["title"] property="og:title"
     meta content= site_metadata["name"] property="og:site_name"
     meta content= site_metadata["url"] property="og:url"
     meta content= site_metadata["description"] property="og:description"
