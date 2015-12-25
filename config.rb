@@ -5,7 +5,6 @@ require "helpers/view_helpers.rb"
 helpers ViewHelpers
 
 
-
 # Slim HTML
 # ----------------------------------------------
 Slim::Engine.disable_option_validator!
@@ -25,12 +24,12 @@ end
 
 # Bower Config
 # ----------------------------------------------
-after_configuration do
-  @bower_config = JSON.parse(IO.read("#{root}/.bowerrc"))
-  @bower_assets_path = File.join "#{root}", @bower_config["directory"]
-  sprockets.append_path @bower_assets_path
-end
-
+# after_configuration do
+#   @bower_config = JSON.parse(IO.read("#{root}/.bowerrc"))
+#   @bower_assets_path = File.join "#{root}", @bower_config["directory"]
+#   sprockets.append_path @bower_assets_path
+# end
+import_path File.expand_path('bower_components', app.root)
 
 # Configure assets directories
 # ----------------------------------------------
@@ -61,9 +60,15 @@ configure :development do
   ::Slim::Engine.set_options :pretty => true
 
   # Activate autoprefixer
-  activate :autoprefixer do |config|
-  config.browsers = ['last 4 versions', 'Explorer >= 9']
-  end
+  # activate :autoprefixer do |config|
+  # config.browsers = ['last 4 versions', 'Explorer >= 9']
+  # end
+  
+  activate :external_pipeline,
+    name: :gulp,
+    command: "gulp",
+    source: "/source",
+    latency: 2
 
 end
 
@@ -88,10 +93,10 @@ configure :build do
   # activate :gzip
 
   # Minify CSS on build
-  activate :minify_css
+  # activate :minify_css
 
   # Minify Javascript on build
-  activate :minify_javascript
+  # activate :minify_javascript
 
   # Add asset fingerprinting to avoid cache issues
   activate :asset_hash
@@ -100,13 +105,14 @@ configure :build do
   activate :cache_buster
 
   # Activate autoprefixer
-  activate :autoprefixer do |config|
-  config.browsers = ['last 4 versions', 'Explorer >= 9']
-  end
-
-  # PostCss by Gulp
-  # after_build do
-  #   system('gulp build')
+  # activate :autoprefixer do |config|
+  # config.browsers = ['last 4 versions', 'Explorer >= 9']
   # end
+
+  activate :external_pipeline,
+    name: :gulp,
+    command: "gulp",
+    source: "/source",
+    latency: 2
 
 end

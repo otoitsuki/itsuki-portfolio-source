@@ -1,10 +1,4 @@
 {
-  "name": "middleman-startae",
-  "version": "0.0.0",
-  "private": "true",
-  "authors": [
-    "Startaê <http://www.startae.com>"
-  ],
   "dependencies": {
     "bourbon": "~4.2.3",
     "enquire": "~2.1.2",

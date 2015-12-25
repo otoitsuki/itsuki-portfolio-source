@@ -18,7 +18,8 @@ title: Index
       h3 我是 h3
       p = lorem.sentence
       h4 我是 h4
-      p = lorem.sentence
+      p 
+        img src= lorem.image('300x400', :random_color => true)
 .footer
   = partial "footer"
 - content_for :page_javascript do
