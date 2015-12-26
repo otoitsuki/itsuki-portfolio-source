@@ -5,10 +5,20 @@ require "helpers/view_helpers.rb"
 helpers ViewHelpers
 
 
+# Configure assets directories
+# ----------------------------------------------
+set :css_dir, 'assets/styles'
+set :js_dir, 'assets/scripts'
+set :images_dir, 'assets/images'
+set :fonts_dir, 'assets/fonts'
+set :partials_dir, 'partials/'
+
+
 # Slim HTML
 # ----------------------------------------------
 Slim::Engine.disable_option_validator!
 set :slim, { :pretty => true, :sort_attrs => false, :format => :html }
+
 
 # i18n
 # ----------------------------------------------
@@ -31,17 +41,6 @@ end
 # end
 import_path File.expand_path('bower_components', app.root)
 
-# Configure assets directories
-# ----------------------------------------------
-set :css_dir, 'assets/styles'
-set :js_dir, 'assets/scripts'
-set :images_dir, 'images'
-set :fonts_dir, 'assets/fonts'
-set :partials_dir, 'partials'
-
-# Configure SASS
-# ----------------------------------------------
-
 
 # Other configurations
 # ----------------------------------------------
@@ -63,7 +62,7 @@ configure :development do
   # activate :autoprefixer do |config|
   # config.browsers = ['last 4 versions', 'Explorer >= 9']
   # end
-  
+
   activate :external_pipeline,
     name: :gulp,
     command: "gulp",
@@ -77,10 +76,10 @@ end
 # ----------------------------------------------
 configure :build do
 
-  compass_config do |config|
-    config.output_style = :compressed
-    config.line_comments = false
-  end
+  # compass_config do |config|
+  #   config.output_style = :compressed
+  #   config.line_comments = false
+  # end
 
   # Output a pretty html
   ::Slim::Engine.set_options :pretty => true
@@ -93,7 +92,7 @@ configure :build do
   # activate :gzip
 
   # Minify CSS on build
-  # activate :minify_css
+  activate :minify_css
 
   # Minify Javascript on build
   # activate :minify_javascript
@@ -109,10 +108,11 @@ configure :build do
   # config.browsers = ['last 4 versions', 'Explorer >= 9']
   # end
 
-  activate :external_pipeline,
-    name: :gulp,
-    command: "gulp",
-    source: "/source",
-    latency: 2
+  # ignore file
+  ignore "sass/*"
+  ignore "javascript/*"
+  ignore "bower_components/*"
+  ignore "*.yml"
+  
 
 end

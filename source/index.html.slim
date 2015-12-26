@@ -2,13 +2,12 @@
 title: Index
 ---
 .header
-  = partial "header"
+  = partial "partials/header"
 .container
   .grid
     h1 = lorem.sentence
-    p ahahahahah
     p = lorem.sentence
-    = partial "social.html.erb"
+    = partial "partials/social"
     .sidebar
     .main
       h1 我是 h1
@@ -21,6 +20,7 @@ title: Index
       p 
         img src= lorem.image('300x400', :random_color => true)
 .footer
-  = partial "footer"
+  = partial "partials/footer"
+  
 - content_for :page_javascript do
-   script src="assets/scripts/main.js"
+   = javascript_include_tag "main.js"

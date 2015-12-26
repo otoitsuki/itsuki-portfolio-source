@@ -5,7 +5,6 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     postcss = require('gulp-postcss'),
     autoprefixer = require('gulp-autoprefixer'),
-    // jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
     imagemin = require('gulp-imagemin'),
     rename = require('gulp-rename'),
@@ -35,7 +34,6 @@ var gulp = require('gulp'),
 
 // 建立任務
 gulp.task('styles', function() { 
- 	// 編譯 Sass、Autoprefix 及縮小化
 	return gulp.src('source/sass/**/*.scss')
   		.pipe(sourcemaps.init())
 	   	.pipe(sass().on('error', sass.logError))
@@ -46,32 +44,47 @@ gulp.task('styles', function() {
 	    .pipe(notify({ message: 'Styles task complete' }));
 });
 
-
-gulp.task('default',['watch'],  function() {  
-    gulp.start('styles');
+gulp.task('scripts', function() {  
+  return gulp.src('source/javascript/**/*.js')
+    .pipe(uglify())
+    // .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest('source/assets/scripts'))
+    .pipe(notify({ message: 'Scripts task complete' }));
 });
+
+gulp.task('images', function() {  
+  return gulp.src('source/images/**/*')
+    .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
+    .pipe(gulp.dest('source/assets/images'))
+    .pipe(notify({ message: 'Images task complete' }));
+});
+
 
 // browserSync 版 default
 // gulp.task('default', ['serve']);
 
-// Watch
+// Gulp default 工作
+gulp.task('default',['watch'],  function() {  
+    gulp.start('styles', 'scripts' , 'images');
+});
 
+// Watch
 gulp.task('watch', function() {
 
   // Watch .scss files
   gulp.watch('source/sass/**/*.scss', ['styles']);
 
-  // // Watch .js files
-  // gulp.watch('src/scripts/**/*.js', ['scripts']);
+  // Watch .js files
+  gulp.watch('source/javascript/**/*.js', ['scripts']);
 
-  // // Watch image files
-  // gulp.watch('src/images/**/*', ['images']);
+  // Watch image files
+  gulp.watch('source/images/**/*', ['images']);
 
   // Create LiveReload server
-  livereload.listen();
+  // livereload.listen();
 
   // Watch any files in dist/, reload on change
-  gulp.watch(['source/**']).on('change', livereload.changed);
+  // gulp.watch(['source/**']).on('change', livereload.changed);
 
 
 });
