@@ -22,10 +22,15 @@ html {
   background-color: #fff;
 }
 
+
 body, select, input, textarea {
 	color: $c-text;
 }
 
+::selection {
+	color: $c-selected-font;
+	background: $c-selected-background;
+}
 
 
 // -------------------------------------
@@ -33,7 +38,7 @@ body, select, input, textarea {
 // -------------------------------------
 
 ul, ol, p, table {
-  @include font-size($b-fontSize);
+  font-size: 1rem;
   line-height: $b-lineHeight;
   margin-bottom: $b-fontSize * 1.43;
   margin-top: 0;
@@ -81,21 +86,31 @@ h6 {
 
 
 h1 { 
-  font-size: $b-fontSize-MD-h1;
+  font-size: $b-fontSize-GMD-h1;
   // font-size: $b-fontSize-Golden-h1;
 }
 h2 { 
-  font-size: $b-fontSize-MD-h2;
+  font-size: $b-fontSize-GMD-h2;
   // font-size: $b-fontSize-Golden-h2;
 }
 h3 { 
-  font-size: $b-fontSize-MD-h3;
+  font-size: $b-fontSize-GMD-h3;
   // font-size: $b-fontSize-Golden-h3;
 }
 h4 { 
-  font-size: $b-fontSize-MD-h4;
+  font-size: $b-fontSize-GMD-h4;
   // font-size: $b-fontSize-Golden-h4;
 }
+h5 { 
+  font-size: $b-fontSize-GMD-h5;
+  // font-size: $b-fontSize-Golden-h5;
+}
+
+h6 { 
+  font-size: $b-fontSize-GMD-h6;
+  // font-size: $b-fontSize-Golden-h6;
+}
+
 
 
 
