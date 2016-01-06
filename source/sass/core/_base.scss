@@ -80,38 +80,37 @@ h5,
 h6 {
   font-family: $b-fontFamily-sans;
   font-weight: 500; // Chrome底下思源黑體不支援數字字級
-  line-height: 1.47em;
+  line-height: $b-lineHeight;
   @include rem-fallback(margin, .25, 0, .7, 0); // from https://github.com/Dogfalo/materialize/blob/master/sass/components/_typography.scss
 }
 
-
+// by nhkia
 h1 { 
-  font-size: $b-fontSize-GMD-h1;
-  // font-size: $b-fontSize-Golden-h1;
+  @include font-size(28px);
 }
 h2 { 
-  font-size: $b-fontSize-GMD-h2;
-  // font-size: $b-fontSize-Golden-h2;
+  @include font-size(28px);
 }
 h3 { 
-  font-size: $b-fontSize-GMD-h3;
-  // font-size: $b-fontSize-Golden-h3;
+  @include font-size(19px);
 }
 h4 { 
-  font-size: $b-fontSize-GMD-h4;
-  // font-size: $b-fontSize-Golden-h4;
+  @include font-size(16px);
 }
 h5 { 
-  font-size: $b-fontSize-GMD-h5;
-  // font-size: $b-fontSize-Golden-h5;
+  @include font-size(16px);
 }
-
 h6 { 
-  font-size: $b-fontSize-GMD-h6;
-  // font-size: $b-fontSize-Golden-h6;
+  @include font-size(14px);
 }
 
 
+// ----- Article ----- //
+
+
+p {
+  @include font-size($b-fontSize,$b-lineHeight);
+}
 
 
 // ----- others ----- //
