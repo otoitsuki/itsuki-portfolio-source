@@ -38,8 +38,6 @@ body, select, input, textarea {
 // -------------------------------------
 
 ul, ol, p, table {
-  font-size: 1rem;
-  line-height: $b-lineHeight;
   margin-bottom: $b-fontSize * 1.43;
   margin-top: 0;
 }
@@ -54,14 +52,14 @@ li {
 // -------------------------------------
 
 img {
-    max-width: 100%; // Add !important if needed. //
-    height: auto;    // Add !important if needed. //
+  max-width: 100%; // Add !important if needed. //
+  height: auto;    // Add !important if needed. //
 }
 
 a {
   @include link-colors($c-link, $c-link-hover, $c-link-active, $c-link-visited, $c-link-focus);
-    text-decoration:    none;
-    transition:         color .3s ease-in-out;
+  text-decoration:    none;
+  transition:         color .3s ease-in-out;
 }
 
 
@@ -107,9 +105,9 @@ h6 {
 
 // ----- Article ----- //
 
-
-p {
+ul, ol, p, a, table {
   @include font-size($b-fontSize,$b-lineHeight);
+  line-height: $b-lineHeight;
 }
 
 
