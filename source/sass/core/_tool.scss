@@ -23,6 +23,10 @@
 //   Display
 // -------------------------------------
 
+%l-inblock, .l-inblock {
+  display: inline-block;
+}
+
 %l-block, .l-block {
   display: block;
 }
@@ -52,8 +56,16 @@
 // ----- Horizontal ----- //
 
 %blockC ,.blockC {
-  margin-right: auto;
-  margin-left: auto;
+  margin: auto;
+}
+
+// ----- Vertical ----- //
+
+%vC ,.vC {
+  // 和 blockC 併用，母元素打allC，要置中的子元素 blockC
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 // -------------------------------------
@@ -71,69 +83,35 @@
 
 
 // -------------------------------------
-//   Grid
+//   layout
 // -------------------------------------
 
-// 12 Grid system From http://www.responsivegridsystem.com/ 
+// .row
+// components → row.scss
 
-//  COLUMN SETUP  */
-.col {
-	display: block;
-	float:left;
-	margin: 1% 0 1% 1%;
+// Grid //
+// .grid 裡面才有用
+
+.col-xs-1 {
+  @include span(1);
 }
-.col:first-child { margin-left: 0; }
-
-//  GROUPING  */
-.group:before,
-.group:after { content:""; display:table; }
-.group:after { clear:both;}
-.group { zoom:1;  }// For IE 6/7 */
-
-//  GRID OF TWELVE  */
-.span_12_of_12 {
-	width: 100% !important; 
+.col-xs-2 {
+  @include span(2); 
 }
-
-.span_11_of_12 {
-  width: 91.53% !important; 
+.col-xs-3 {
+  @include span(3);
 }
-.span_10_of_12 {
-  width: 83.06% !important; 
+.col-xs-4 {
+  // @include span(4);
+  width: 100%;
 }
 
-.span_9_of_12 {
-  width: 74.6% !important; 
+// 共用
+.col-last {
+  margin-right: 0;
 }
 
-.span_8_of_12 {
-  width: 66.13% !important; 
-}
 
-.span_7_of_12 {
-  width: 57.66% !important; 
-}
 
-.span_6_of_12 {
-  width: 49.2% !important; 
-}
 
-.span_5_of_12 {
-  width: 40.73% !important; 
-}
 
-.span_4_of_12 {
-  width: 32.26% !important; 
-}
-
-.span_3_of_12 {
-  width: 23.8% !important; 
-}
-
-.span_2_of_12 {
-  width: 15.33% !important; 
-}
-
-.span_1_of_12 {
-  width: 6.866% !important; 
-}

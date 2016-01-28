@@ -6,15 +6,20 @@
 
 
 //-------------------------------------
-// normal-table 標準表格，無thead th
+// normal-table 標準表格
 // from http://weboook.blog22.fc2.com/blog-entry-329.html
 //-------------------------------------
-
-
 
 %normal-table {
   table-layout:fixed;
   border-spacing: 0;
+  
+  thead th {
+    background-color: $normal-table-th-bgc;
+    color: #fff;
+    padding: .6em 0 .4em 0;
+    border: 1px solid $normal-table-th-border;
+  }
 
   tr:first-child {
     border-left:1px solid $normal-table-border;
@@ -27,7 +32,7 @@
     box-shadow: 2px 2px 1px $normal-table-box-shadow,0px 1px 1px rgba(255,255,255,0.3) inset;
   }
   tr td {
-    padding: 8px 15px;
+    padding: .6em 0 .4em 0;
     border-bottom: 1px solid $normal-table-border;
     border-left: 1px solid $normal-table-border;
     text-align: center;
@@ -51,20 +56,16 @@
   }
 }
 
-/*-------------------------------------
-  Material Design typography
-  http://codepen.io/zavoloklom/pen/IkaFL
-  -------------------------------------*/
+
+//-------------------------------------
+// Material Design Responsive Table
+// http://codepen.io/zavoloklom/pen/IkaFL
+// 共4種
 // %md-table
 // %md-table-condensed
 // %md-table-bordered
 // %md-table-striped 
-
-
-// Tables
-//
-// -----------------
-
+//-------------------------------------
 // Baseline styles
 %md-table {
   width: 100%;

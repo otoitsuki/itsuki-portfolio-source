@@ -13,9 +13,8 @@
 
 $c-highlight: #D0021B; // = base color
 $c-highlight-dark: #81000F; 
-$c-subhighlight: #018972;
-$c-subhighlight-dark: #005547;
 
+$c-important: #e51c23; //red
 // ----- Base ----- //
 
 $c-text: #111;
@@ -35,11 +34,6 @@ $c-selected-background: darken(adjust_hue($c-highlight,180), 6);
 $c-invalid-background: #f0dddd;
 
 
-// ----- Typography ----- //
-
-$c-important: #e51c23; //red
-$c-title: #555555;
-
 
 
 
@@ -50,12 +44,12 @@ $c-title: #555555;
 
 // ----- Borders & Box Shadow ----- //
 
-$b-borderColor: lighten($c-highlight, 30%);
+$b-borderColor: $c-background;
 $b-borderRadius: 3px;
 $b-borderStyle: solid;
-$b-borderWidth: 2px;
+$b-borderWidth: 1px;
 $b-border: $b-borderWidth $b-borderStyle $b-borderColor;
-$b-boxShadow: 0 2px 0 rgba($c-text, 0.25);
+$b-boxShadow: #E1E1E1;
 
 
 // ----- Typography ----- //
@@ -64,7 +58,7 @@ $b-fontSize: 16px;
 // $b-lineHeight: 1.55
 $b-lineHeight: 1.4; // RWD本 P.282 建議
 $b-fontFamily-serif: 'PMingLiU', serif;
-$b-fontFamily-sans: 'Open Sans', 'Helvetica Neue', 'Arial', 'Roboto', 'Heiti TC', 'Adobe 繁黑體 Std', 'AdobeFanHeitiStd-Bold', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+$b-fontFamily-sans: "PingFang TC", "Lantinghei TC", "Hiragino Sans", "Microsoft Sans Serif","Open Sans", "Helvetica Neue", "Verdana", sans-serif;
 
 
 // ----- FontSize ----- //
@@ -149,10 +143,11 @@ $b-space-xl: 4 * $b-space;
 
 // normal
 
-
+$normal-table-th-bgc: $c-highlight-dark;
+$normal-table-th-border: $c-background;
+$normal-table-bgc-even: #eee;
 $normal-table-bgc-odd: #fff;
-$normal-table-bgc-even: #f1f6fc;
-$normal-table-bgc-hover: #bbd4ee;
+$normal-table-bgc-hover: $c-highlight;
 $normal-table-border:  $b-borderColor;
 $normal-table-box-shadow: $b-boxShadow;
 

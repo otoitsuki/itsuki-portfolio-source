@@ -1,0 +1,288 @@
+// *************************************
+//
+//   Form
+//     
+//
+// *************************************
+
+.form {}
+
+
+// 單一區塊表單，沒有段落分隔（所以欄位間距要比較多）
+.form.form--singleblock {
+  select, input, textarea {
+    margin-bottom: $b-space;
+  }
+}
+
+// -------------------------------------
+//   基本架構
+// -------------------------------------
+
+// form 元素共通屬性
+
+%form-base {
+  display: block;
+  clear: both;
+  font-size: 1em;
+  line-height: $b-lineHeight;
+  vertical-align: middle;
+  margin-top: $b-space-xs;
+  margin-bottom: $b-space-s;
+  min-width: 40px;
+}
+
+
+// 文字、資料元素個別設定
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+  @extend %form-base;
+  color: $c-text;
+  background-color: #fff;
+  padding: 0.5em;
+  outline: none; // 去掉outline後一定要加:FOUCS
+  border: 1px solid #DDDDDD;
+  // for ios mobile system, convert onclick to touch
+  @include susy-media(0 1024px) {
+    cursor: pointer;
+  }
+}
+
+select {
+  height: 2.5em; // select 的高沒辦法靠padding和fontsize去撐，只能用height
+}
+
+
+label {
+  @extend %form-base;
+  clear: both;
+  color: lighten($c-text,20);
+  display: block;
+  clear: both;
+  margin-left: 0;
+  margin-bottom: 0;
+}
+
+/*label*/.label {
+  font-size: 0.9em;
+  line-height: $b-lineHeight * 1.2 ;
+}
+
+// radio button & checkbox
+// 因為行動版預設radio button太小，要重畫
+
+// ------- 設計邏輯 ------- 
+// 1. 隱藏原本的圈圈
+// 2. 用label的before偽元素設計圈圈
+// 3. 用連接選擇器選取input:checked + label，設計出點下圈圈時的樣式
+// 【注意】要用label for 和 radio id 綁定（radio一定要設和label for一樣的id）才有用!!!!!! 
+
+input[type="radio"] {
+    display: none;
+
+    & + label {
+        display: block;
+        cursor: pointer;
+        margin: $b-space-s;
+
+        /*通常時の見た目*/
+        &::before {
+            width: 1.8em;
+            height: 1.8em;
+            display: inline-block;
+            content: "";
+            border-radius: 1.2em;
+            vertical-align: middle;
+            border: 2px solid #dddddd;
+            background-color: #fff;
+            margin: -2px 5px 0 0;
+            transition: .1s;
+        }
+    }
+    /*checked時の見た目*/
+    &:checked + label {
+        color: $c-highlight;
+        cursor: default;
+
+        &::before {
+            border-color: #fff !important;
+            background-color: #fff !important;
+            box-shadow: inset 0 0 0 pxtorem(9px) $c-highlight;
+        }
+    }  
+}
+
+input[type="checkbox"] {
+    display: none;
+
+    & + label {
+        display: block;
+        cursor: pointer;
+        margin: 20px;
+
+        /*通常時の見た目*/
+        &::before {
+            width: 2em;
+            height: 2em;
+            line-height: 2em;
+            font-size: 1em;
+            display: inline-block;
+            vertical-align: middle;
+            text-align: center;
+            content: "\2713";
+            color: transparent;
+            padding: 0;
+            border: 2px solid #dddddd;
+            background: #fff;
+            margin: -2px 5px 0 0;
+            transition: .1s;
+            box-sizing: border-box;
+        }
+    } 
+    /*checked時の見た目*/
+    &:checked + label {
+        color: $c-highlight;            
+        &::before {
+            background: $c-highlight !important;
+            border-color: #fff !important;
+            color: #fff !important;
+        }
+    }  
+}
+
+
+// -------------------------------------
+//   Modifiers 風格種類
+// -------------------------------------
+
+// input
+
+select,textarea,input {
+  box-shadow: 0px 0px 2px 0px rgba($c-background,0);
+  // 點擊時的設計
+  &:focus {
+    transition: all 0.2s ease-in-out; 
+    box-shadow: 0px 0px 2px 0px rgba($c-highlight,1);
+    border: none;
+  }
+  // 必填
+  &:focus:invalid {
+    transition: all 0.2s ease-in-out; 
+    box-shadow: 0px 0px 2px 0px rgba($c-important,1);
+    border: none;
+  }
+  // Disable
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    opacity: .65;
+    background-color: #d8d8d8;
+    color: #9B9B9B;
+    border-color: #d8d8d8;
+  }
+}
+
+
+
+// search
+
+.search-input {
+  @extend %clearfix;
+  box-sizing: border-box;
+  line-height: $b-lineHeight;
+  vertical-align: middle;
+  margin-top: $b-space-s;
+  margin-bottom: $b-space-s;
+  display: block;
+  max-width: 100%;
+  .search-query  {
+    box-sizing: border-box;
+    background-color: #fff;
+    box-shadow: 0px 0px 2px 0px #DDD;
+    display: inline-block;
+    width: 100%;
+    float: left;
+    border: 0;
+    margin: 0 -40px 0 0;
+    padding: 0.5em 36px 0.5em 0.5em;
+      // 點擊時的設計
+      &:focus {
+        box-shadow: 0px 0px 2px 0px $c-highlight;
+      }
+  }
+  .search-btn {
+    display: inline-block;
+    float: right;
+    background-color: transparent;
+    @extend %tC;
+    line-height: 0;
+    width: 36px;
+    height: 36px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  img {
+    min-width: 18px;
+    min-height: 18px;
+  }
+}
+
+
+// search 首頁用
+.search-input.search-sp {
+  .search-query {
+    border: 1px solid $c-text;
+    border-radius: 0px;
+    background-color: #fff;
+    // 點擊時的設計
+    &:focus {
+      border: 1px solid $c-highlight;
+    }
+  }
+  
+}
+
+
+
+
+
+// -------------------------------------
+//   版面
+// -------------------------------------
+
+.form-inline {
+  select,textarea,input,label {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0;
+  }
+
+  input[type="checkbox"] , input[type="radio"]  {
+    display: none;
+    & + label {
+      display: inline-block;
+    }
+  }
+
+  .col-xs-1,.col-xs-2,.col-xs-3,.col-xs-4 {
+    float: none;
+  }
+}
+

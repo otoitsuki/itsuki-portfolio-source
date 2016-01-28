@@ -1,0 +1,12 @@
+// ------------------------------------------------
+// 超過的字數自動帶…
+// → 需要設定高度才有用
+// ------------------------------------------------
+
+%line-camp {
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}

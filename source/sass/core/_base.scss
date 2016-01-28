@@ -10,11 +10,9 @@
 // -------------------------------------
 //   Base-level 
 // -------------------------------------
-// * {
-//   -webkit-box-sizing: border-box;
-//      -moz-box-sizing: border-box;
-//           box-sizing: border-box;
-// }
+* {
+  box-sizing: border-box; 
+}
 
 html {
   font-size: 100%;
@@ -32,6 +30,12 @@ body, select, input, textarea {
 	background: $c-selected-background;
 }
 
+.page {
+  // 解決頁面內容太短，頁尾漂浮的問題
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
 
 // -------------------------------------
 //   Block Content
@@ -79,7 +83,6 @@ h6 {
   font-family: $b-fontFamily-sans;
   font-weight: 500; // Chrome底下思源黑體不支援數字字級
   line-height: $b-lineHeight;
-  @include rem-fallback(margin, .25, 0, .7, 0); // from https://github.com/Dogfalo/materialize/blob/master/sass/components/_typography.scss
 }
 
 // by nhkia
@@ -103,17 +106,29 @@ h6 {
 }
 
 
+
 // ----- Article ----- //
 
-ul, ol, p, a, table {
+ul, ol, a, table {
   @include font-size($b-fontSize,$b-lineHeight);
   line-height: $b-lineHeight;
 }
 
+p {
+  @include font-size($b-fontSize);
+  line-height: 1.8;
+}
+
+li > a {
+  line-height: 2;
+}
 
 // ----- others ----- //
 
 
 .text-important {
   color: $c-important;
+}
+.text-primary {
+  color: $c-highlight;
 }

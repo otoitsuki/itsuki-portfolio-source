@@ -33,11 +33,9 @@
 
 // ----- inuit ----- //
 
-// @import "bower_components/inuit-defaults";
-// @import "bower_components/inuit-list-bare";
-// @import "bower_components/inuit-list-block";
-// @import "bower_components/inuit-list-inline";
-// @import "bower_components/inuit-list-ui";
+// @import "bower_components/inuit-defaults/settings.defaults";
+// @import "bower_components/inuit-list-inline/objects.list-inline";
+// @import "bower_components/inuit-list-bare/objects.list-bare";
 
 
 // -------------------------------------
@@ -58,10 +56,10 @@
 // ----- Reset ----- //
 
 // Normalize.css
-// @import "normalize.scss";
+@import "https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css";
 
 // sanitize.css
-@import 'bower_components/sanitize-css/sanitize';
+// @import 'bower_components/sanitize-css/sanitize';
 
 // 漢字標準格式
 // @import "core/reset/han.sass";
@@ -101,11 +99,11 @@
 // Table //
 @import "components/table";
 
-// Button //
-@import "components/button";
-
 // form //
-@import "components/form";
+@import "components/form/form";
+
+// Button //
+@import "components/form/button";
 
 // alert //
 @import "components/alert";
@@ -122,6 +120,12 @@
 
 // dldtdd //
 @import "components/dldtdd";
+
+// hr //
+@import "components/hr";
+
+// block //
+@import "components/block";
 
 
 // 固有元件 //
@@ -144,12 +148,14 @@
 // Social Buttons
 @import "components/social-buttons";
 
+// Loading anime
+@import "components/loading-anime";
 // -------------------------------------
 //   Components > Modules 本站可重複使用元件
 // -------------------------------------
 
 // 商品模組
-// @import "modules/mod-product";
+// @import "structures/modules/mod-product";
 
 
 // -------------------------------------

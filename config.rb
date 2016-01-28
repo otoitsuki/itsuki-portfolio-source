@@ -25,10 +25,16 @@ set :slim, { :pretty => true, :sort_attrs => false, :format => :html }
 # activate :i18n, :mount_at_root => :'zh-tw'
 
 
+
+# JP lorem
+# FROM https://github.com/tanalab2/middleman-ya_lorem_ja
+# ----------------------------------------------
+# activate :ya_lorem_ja
+
 # Livereload
 # ----------------------------------------------
 configure :development do
-  activate :livereload, :no_swf => true
+  activate :livereload, :no_swf => true 
 end
 
 
@@ -68,6 +74,18 @@ configure :development do
     command: "gulp",
     source: "/source",
     latency: 2
+    
+  activate :external_pipeline,
+    name: :browsersync,
+    command: "browser-sync start --proxy 'localhost:4567' --files source",
+    source: "[
+              '/source/assets/styles/**/*.css',
+              '/source/assets/scripts/**/*.js',
+              '/source/assets/images/**/*',
+              '/source/**/*.slim',
+            ]",
+    # source: "/source",
+    latency: 20
 
 end
 
@@ -98,10 +116,10 @@ configure :build do
   # activate :minify_javascript
 
   # Add asset fingerprinting to avoid cache issues
-  activate :asset_hash
+  # activate :asset_hash
 
   # Enable cache buster
-  activate :cache_buster
+  # activate :cache_buster
 
   # Activate autoprefixer
   # activate :autoprefixer do |config|
@@ -110,8 +128,10 @@ configure :build do
 
   # ignore file
   ignore "sass/*"
+  ignore "images/*"
   ignore "javascript/*"
   ignore "bower_components/*"
+  ignore "archive/*"
   ignore "*.yml"
   
 

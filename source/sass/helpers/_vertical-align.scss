@@ -1,15 +1,16 @@
-// 上下至中
+// *************************************
 //
-//.mixin p {
+//   上下置中
+// 	 可視範圍內的垂直至中
+//
+// *************************************
+// 範例
+//p {
 //  @include vertical-align;
 //}
 //
-//
 
 @mixin vertical-align {
-  position: relative;
-  top: 50%;
-  	-webkit-transform: translateY(-50%);
-  	-ms-transform: translateY(-50%);
-  	transform: translateY(-50%);
+ margin: 50vh auto 0;
+ transform: trnaslateY(-50%);
 }

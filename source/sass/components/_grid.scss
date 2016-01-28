@@ -6,11 +6,21 @@
 // *************************************
 
 // -------------------------------------
-//   Config
+//   Variable
 // -------------------------------------
 
 
-$show-grid-backgrounds: show; // 選項：show、hide、show-columns、show-baseline
+$standard-column: 75px;
+$standard-gutter: 6px;
+$base-line-height: $b-fontSize*$b-lineHeight;
+
+$show-grid-backgrounds: show; 
+// 選項：show、hide、show-columns、show-baseline
+
+// -------------------------------------
+//   Config
+// -------------------------------------
+
 
 // gutter-position 說明
 // before：推左邊界(margin-left)
@@ -19,15 +29,14 @@ $show-grid-backgrounds: show; // 選項：show、hide、show-columns、show-base
 // inside：推欄的左右內距(padding-left、padding-right)
 // inside-static ：用inside會用%來推padding，這則是以單位來推，例：px、em，看你的column-width是用什麼單位
 
-
-
+// 間距固定不隨比例變化 //
 $susy: (
   math: fluid,
-  container: auto, // container最大寬度。預設auto，依照columns與gutters設定自動算出數值
+  container: 100%, // container最大寬度。預設auto，依照columns與gutters設定自動算出數值
   columns: 4, // 預設是四欄
-  gutters: 12px/69px, // 欄位與欄位間的間距，單位是和columns的比例％，預設1/4
-  gutter-position: after , // 每欄之間顯示模式，看上面
-  column-width: false, // 欄位寬度，預設是false（因為都是用比例去算）
+  gutters: $standard-gutter/$standard-column, // 欄位與欄位間的間距，單位是和columns的比例％，預設1/4
+  gutter-position: split, // 每欄之間顯示模式，看上面
+  column-width: $standard-column, // 欄位寬度，預設是false（因為都是用比例去算）
   global-box-sizing: border-box, // 搭配 border-box-sizing mixin 使用，沒開不能用
   last-flow: to, // gutter-position設定成after或before的話，可能有機會會改到這個設定
 
@@ -41,14 +50,41 @@ $susy: (
   )
 );
 
+// 間距隨比例變化 //
+// $susy: (
+//   math: fluid,
+//   container: 100%, // container最大寬度。預設auto，依照columns與gutters設定自動算出數值
+//   columns: 4, // 預設是四欄
+//   gutters: $standard-gutter/$standard-column, // 欄位與欄位間的間距，單位是和columns的比例％，預設1/4
+//   gutter-position: after, // 每欄之間顯示模式，看上面
+//   column-width: false, // 欄位寬度，預設是false（因為都是用比例去算）
+//   global-box-sizing: border-box, // 搭配 border-box-sizing mixin 使用，沒開不能用
+//   last-flow: to, // gutter-position設定成after或before的話，可能有機會會改到這個設定
+
+//   debug: (
+//     image: $show-grid-backgrounds,
+//   ),
+//   use-custom: (
+//     background-image: true, // for debugging
+//     background-options: false, // for debugging
+//     clearfix: false, // 是否要自動抓取compass預設的clearfix的mixin
+//   )
+// );
+
 
 // -------------------------------------
 //   Grid
 // -------------------------------------
 .grid {
   @include container;
-  @include border-box-sizing;
-  padding: 0 20px;
+  // @include border-box-sizing;
+
+  // 留白隨比例變化↓
+  // margin-left: gutter();
+  // margin-right: gutter();
+
+  // 留白固定不隨比例變化↓
+  margin : auto $standard-gutter*2;
 }
 
 // --- 主要頁面區塊 --- //
@@ -57,4 +93,5 @@ $susy: (
 .header, .container, .footer {
   width: 100%;
 }
+
 
