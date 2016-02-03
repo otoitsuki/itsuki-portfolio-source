@@ -3,6 +3,5 @@ name: "網站名稱"
 url: "http://"
 description: "預設敘述"
 author: "作者名"
-
-og-type: "website"
-og-image: "images/fb.png"
+ogtype: "website"
+ogimage: "images/fb.png"

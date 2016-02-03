@@ -1,8 +1,8 @@
 # View Middleman configurations:
 # http://localhost:4567/__middleman/config/
 
-require "helpers/view_helpers.rb"
-helpers ViewHelpers
+# require "helpers/view_helpers.rb"
+# helpers ViewHelpers
 
 
 # Configure assets directories
