@@ -30,3 +30,6 @@ gem 'coffee-script', '~> 2.4.1'
 
 # Generate fake data
 gem 'faker', '~> 1.4.3'
+
+# Shopify Liquid template engine
+gem 'liquid', '~> 3.0.0
