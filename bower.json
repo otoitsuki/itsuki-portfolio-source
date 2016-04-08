@@ -13,5 +13,9 @@
   ],
   "description": "",
   "main": "",
-  "moduleType": []
+  "moduleType": [],
+  "devDependencies": {
+    "hologram-github-theme": "^0.1.4",
+    "Cortana": "^1.2.9"
+  }
 }

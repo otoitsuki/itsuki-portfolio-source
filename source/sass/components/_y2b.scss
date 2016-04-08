@@ -1,7 +1,19 @@
-// 可以讓Y2b影片符合RWD
-// <div class="movie y2b">
-//   <iframe src='http://www.youtube.com/embed/UpA7VYz__mc' frameborder='0' allowfullscreen></iframe>
-// </div>
+
+/*doc
+---
+title: Youtube iframe
+category: Other Components
+---
+
+可以讓Y2b影片符合RWD
+
+```html_example
+<div class="movie y2b">
+  <iframe src='http://www.youtube.com/embed/UpA7VYz__mc' frameborder='0' allowfullscreen></iframe>
+</div>
+```
+*/
+
 
 .y2b { 
   position: relative; 

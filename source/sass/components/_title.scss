@@ -1,8 +1,24 @@
-// *************************************
-//
-//   Title
-//   
-// *************************************
+
+/*doc
+---
+title: Title
+category: Typography
+---
+
+頁面或是區塊的標題
+
+```html_example
+<h1 class="title title--page">頁面標題</h1>
+```
+
+```html_example
+<h1 class="title title--page">區塊標題</h1>
+```
+
+```html_example
+<h1 class="title title--page">內文標題</h1>
+```
+*/
 
 .title {
 }

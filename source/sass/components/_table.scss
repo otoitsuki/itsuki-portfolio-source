@@ -1,33 +1,134 @@
-// *************************************
-//
-//   Table
-//   
-//
-// *************************************
+
+/*doc
+---
+title: Table
+category: Table
+---
+
+## 一般 Table
+
+```html_example
+<table class="table">
+  <tr>
+    <th>項目</th>
+    <th>收費標準</th>
+    <th>說明</th>
+  </tr>
+  <tr>
+    <td>EDM</td>
+    <td>每 200 封 = 1 點</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>簡訊</td>
+    <td>每 1 則  = 1 點</td>
+    <td>每次發 200 封扣 1 點</td>
+  </tr>
+  <tr>
+    <td>黑貓托運服務</td>
+    <td>每件 60 ～ 190 點</td>
+    <td>嘎嘎</td>
+  </tr>
+</table>
+```	
 
 
-// 要用哪種table呢？（參見helper/tables，變數在Config裡）
+
+## md-table
+
+```html_example
+<table class="table md-table">
+  <tr>
+    <th>項目</th>
+    <th>收費標準</th>
+    <th>說明</th>
+  </tr>
+  <tr>
+    <td>EDM</td>
+    <td>每 200 封 = 1 點</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>簡訊</td>
+    <td>每 1 則  = 1 點</td>
+    <td>每次發 200 封扣 1 點</td>
+  </tr>
+  <tr>
+    <td>黑貓托運服務</td>
+    <td>每件 60 ～ 190 點</td>
+    <td>嘎嘎</td>
+  </tr>
+</table>
+```	
+
+
+## md-table-condensed
+
+```html_example
+<table class="table md-table-condensed">
+  <tr>
+    <th>項目</th>
+    <th>收費標準</th>
+    <th>說明</th>
+  </tr>
+  <tr>
+    <td>EDM</td>
+    <td>每 200 封 = 1 點</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>簡訊</td>
+    <td>每 1 則  = 1 點</td>
+    <td>每次發 200 封扣 1 點</td>
+  </tr>
+  <tr>
+    <td>黑貓托運服務</td>
+    <td>每件 60 ～ 190 點</td>
+    <td>嘎嘎</td>
+  </tr>
+</table>
+```	
+
+
+## md-table-striped
+
+```html_example
+<table class="table md-table-striped">
+  <tr>
+    <th>項目</th>
+    <th>收費標準</th>
+    <th>說明</th>
+  </tr>
+  <tr>
+    <td>EDM</td>
+    <td>每 200 封 = 1 點</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>簡訊</td>
+    <td>每 1 則  = 1 點</td>
+    <td>每次發 200 封扣 1 點</td>
+  </tr>
+  <tr>
+    <td>黑貓托運服務</td>
+    <td>每件 60 ～ 190 點</td>
+    <td>嘎嘎</td>
+  </tr>
+</table>
+```	
+
+
+*/
+
+// 預設table 樣式參見helper/tables，變數在Config裡
 
 .table {
-  @extend %normal-table;
+  // @extend %normal-table;
   // @extend %md-table;
-  // @extend %md-table-condensed;
+  @extend %md-table-condensed;
   // @extend %md-table-bordered;
-  // @extend %md-table-striped ;
+  // @extend %md-table-striped;
 }
-
-// 追加設定
-
-// .table {
-// 	border-collapse: separate;
-// 	.colspan {
-// 		background-color: #eee;
-// 		@extend %tC;
-// 	}
-// 	td {
-// 		border-bottom: solid 1px rgba(0,0,0,.12);
-// 	}
-// }
 
 .table {
 	@include font-size(13px);
@@ -38,4 +139,30 @@
 	a {
 		font-size: inherit;
 	}
+}
+
+//-------------------------------------
+// Material Design Responsive Table
+// http://codepen.io/zavoloklom/pen/IkaFL
+// 共4種
+// %md-table
+// %md-table-condensed
+// %md-table-bordered
+// %md-table-striped 
+//-------------------------------------
+
+.md-table {
+  @extend %normal-table;
+}
+
+.md-table-condensed {
+  @extend %md-table-condensed;
+}
+
+.md-table-bordered {
+  @extend %md-table-bordered;
+}
+
+.md-table-striped  {
+  @extend %md-table-striped;
 }

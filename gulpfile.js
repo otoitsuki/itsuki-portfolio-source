@@ -14,6 +14,7 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     notify = require('gulp-notify'),
     cache = require('gulp-cache'),
+    hologram = require('gulp-hologram');
     browserSync = require('browser-sync').create(),
     livereload = require('gulp-livereload'),
     del = require('del'),
@@ -25,6 +26,7 @@ var gulp = require('gulp'),
 // ========================================================
 // 建立任務
 // ========================================================
+
 
 // CSS
 gulp.task('styles', function() { 
@@ -66,6 +68,16 @@ gulp.task('html', function() {
 });
 
 
+// hologram
+gulp.task('hologram', function() {
+    gulp.src('hologram_config.yml')
+      .pipe(hologram())
+      .pipe(notify({ message: 'hologram task complete' }))
+      .pipe(livereload({ start: true }));
+});
+
+
+
 // browserSync Setup
 gulp.task('js-watch', ['scripts'], browserSync.reload);
 gulp.task('css-watch', ['styles'], browserSync.reload);
@@ -104,7 +116,7 @@ gulp.task('serve', function () {
 gulp.task('watch', function() {
 
   // Watch .scss files
-  gulp.watch('source/sass/**/*', ['styles']);
+  gulp.watch('source/sass/**/*', ['styles','hologram']);
 
   // Watch .js files
   gulp.watch('source/javascript/**/*', ['scripts']);
@@ -133,7 +145,7 @@ gulp.task('watch', function() {
 
 // Gulp default 工作 browserSync Ver.
 gulp.task('default',['watch'],  function() {  
-   gulp.start('styles', 'scripts' , 'images', 'html');
+   gulp.start('styles', 'scripts' , 'images', 'html','hologram');
 });
 
 // ========================================================

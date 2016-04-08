@@ -32,4 +32,6 @@ gem 'coffee-script', '~> 2.4.1'
 gem 'faker', '~> 1.4.3'
 
 # Shopify Liquid template engine
-gem 'liquid', '~> 3.0.0
+gem 'liquid', '~> 3.0.0'
+
+gem 'hologram'
