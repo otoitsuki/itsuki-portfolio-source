@@ -1,9 +1,21 @@
-// *************************************
-//
-//   dl,dt,dd
-//	   
-//
-// *************************************
+/*doc
+---
+title: dl,dt,dd
+category: Layout - List
+---
+
+dl,dt,dd List
+
+※ 有需要就可以改寫，不然就是用預設Normlize的樣式
+
+```slim_example
+dl
+	dt 標題
+	dd 內容
+```
+
+*/
+
 dt {
 }
 dd {

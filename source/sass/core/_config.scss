@@ -55,8 +55,7 @@ $b-boxShadow: #E1E1E1;
 // ----- Typography ----- //
 
 $b-fontSize: 16px;
-// $b-lineHeight: 1.55
-$b-lineHeight: 1.4; // RWD本 P.282 建議
+$b-lineHeight: 1.5; // RWD本 P.282 建議 1.4
 $b-fontFamily-serif: 'PMingLiU', serif;
 $b-fontFamily-sans: "PingFang TC", "Lantinghei TC", "Hiragino Sans", "Microsoft Sans Serif","Open Sans", "Helvetica Neue", "Verdana", sans-serif;
 // 可參考 fonts partials 追加
@@ -133,6 +132,13 @@ $b-space-s: 0.5 * $b-space;
 $b-space-l: 2 * $b-space;
 $b-space-xl: 4 * $b-space;
 
+// 垂直韻律
+
+$b-space-v: $b-fontSize * $b-lineHeight;
+$b-space-v-xs: 0.25 * $b-space-v;
+$b-space-v-s: 0.5 * $b-space-v;
+$b-space-v-l: 2 * $b-space-v;
+$b-space-v-xl: 4 * $b-space-v;
 
 
 // -------------------------------------

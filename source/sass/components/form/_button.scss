@@ -1,9 +1,18 @@
-// *************************************
-//  
-//   Button
-//	   
-//
-// *************************************
+/*doc
+---
+title: Button
+category: Layout - Form
+---
+
+```slim_example
+a.btn.btn-default Default
+a.btn.btn-important Important
+a.btn.btn-secondary Secondary
+a.btn.btn-default.disabled Disabled
+```
+
+*/
+
 
 
 .btn {
@@ -129,14 +138,14 @@ a.btn {
 
 }
 
-.btn-default {
+.btn.btn-default {
   @include button-variant(#fff, $c-highlight, $c-highlight);
 }
 // Warning appears as orange
-.btn-important {
+.btn.btn-important {
   @include button-variant(#fff, $c-important, $c-important);
 }
-.btn-secondary {
+.btn.btn-secondary {
   @include button-variant($c-highlight, transparent, $c-highlight);
 }
 

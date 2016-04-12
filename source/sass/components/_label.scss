@@ -1,16 +1,38 @@
-// *************************************
-//
-//   Label
-//	   
-//
-// *************************************
+/*doc
+---
+title: Label
+category: Layout - Form
+---
+
+Label 標籤
+※ 每個網站都不同so都需改寫說明
+
+## 一般 label
+```slim_example
+label.label 標籤
+```
+
+## 重要 label
+```slim_example
+label.label.label-important 標籤
+```
+
+## 資訊相關 label
+```slim_example
+label.label.label-info 標籤
+```
+
+*/
 
 
-// 基本款
 .label {
 }
 
-// 其他顏色
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+// ----- Theme ----- //
 
 .label.label-important {
 }

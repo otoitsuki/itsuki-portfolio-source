@@ -1,0 +1,33 @@
+/*doc
+---
+title: Form Address
+category: Layout - Form
+---
+
+## 收件地址（縣市、鄉鎮市區、郵遞區號）排版
+
+```slim_example
+select.address-data name="country" 
+  option selected="selected" value="default" 
+    | 縣市
+select.address-data name="address-level3" 
+  option selected="selected" value="default" 
+    | 鄉鎮市區
+input.address-data autocomplete="postal-code" name="zip" pattern="\\d*" placeholder="100" required="required" type="number" /
+```
+
+*/
+
+// grid 參數設定參見 grid.scss
+.form {
+	@include with-layout($col-3) {
+		.form-address {
+			@include container;
+				margin-bottom: $b-space/4;
+			.address-data {
+				@include gallery(1 of 3);
+				margin-bottom: 0;
+			}
+		}
+	}
+}

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Typography</title>
+    <title>Layout - Grid</title>
 
     <!-- Styleguide CSS -->
     <link rel="stylesheet" href="./theme-build/css/vendors.css">
@@ -125,7 +125,7 @@
             
               
               
-                <li><a href="layout_-_grid.html">Grid</a></li>
+                <li><a class="active" href="layout_-_grid.html">Grid</a></li>
               
             
           
@@ -235,7 +235,7 @@
             
               
               
-                <li><a class="active" href="typography.html">Typography</a></li>
+                <li><a href="typography.html">Typography</a></li>
               
             
           
@@ -246,7 +246,7 @@
 
     <header class="cortana-header sb-slide">
       
-        <h1>Typography</h1>
+        <h1>Grid</h1>
       
       <div id="open-left" class="cortana-menu-btn">
         <span></span>
@@ -266,7 +266,7 @@
           <ul bs-scrollspy-list data-offset="-30">
             
               
-                <li><a href="#Title">Title</a></li>
+                <li><a href="#Row">Row</a></li>
               
             
           </ul>
@@ -277,34 +277,38 @@
 
 
 
-<h1 id="Title" class="styleguide">Title</h1>
-<p class="styleguide">頁面或是區塊的標題</p><div class="codeExample">
+<h1 id="Row" class="styleguide">Row</h1>
+<p class="styleguide">Width-spanning blocks</p>
+<h2>一般 row</h2>
+<div class="codeExample">
   <div class="exampleOutput">
-    <h1 class="title title--page">頁面標題</h1>
+    <div class="row">content</div>
   </div>
   <div class="codeBlock">
     <div class="highlight">
-      <pre><span class="nt">h1</span><span class="nc">.title.title--page</span><span class="w"> </span>頁面標題</pre>
+      <pre><span class="nc">.row</span><span class="w"> </span>content</pre>
+    </div>
+  </div>
+</div>
+
+<h2>important bgcolor row</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="row row--a">content</div>
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nc">.row.row--a</span><span class="w"> </span>content</pre>
     </div>
   </div>
 </div>
 <div class="codeExample">
   <div class="exampleOutput">
-    <h1 class="title title--page">區塊標題</h1>
+    <div class="row row--b">content</div>
   </div>
   <div class="codeBlock">
     <div class="highlight">
-      <pre><span class="nt">h1</span><span class="nc">.title.title--page</span><span class="w"> </span>區塊標題</pre>
-    </div>
-  </div>
-</div>
-<div class="codeExample">
-  <div class="exampleOutput">
-    <h1 class="title title--page">內文標題</h1>
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">h1</span><span class="nc">.title.title--page</span><span class="w"> </span>內文標題</pre>
+      <pre><span class="nc">.row.row--b</span><span class="w"> </span>content</pre>
     </div>
   </div>
 </div>

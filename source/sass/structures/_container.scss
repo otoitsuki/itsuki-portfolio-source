@@ -1,9 +1,20 @@
+/*doc
+---
+title: Container
+category: Structure - ContentWrapper
+---
 
-// *************************************
-//
-//   container
-//
-// *************************************
+## Container
+
+頁面的主體，主要要設定上下留白
+
+
+```slim_example
+	.container
+		| 內容
+```
+
+*/
 
 .container {
   flex: 1; //解漂浮問題

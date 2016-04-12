@@ -1,13 +1,27 @@
-// *************************************
-//
-//   hr
-//   
-// *************************************
+/*doc
+---
+title: Hr
+category: Layout - Hr
+---
+
+hr 分隔線
+
+```slim_example
+hr
+```
+
+*/
 
 hr {
 	border: 0;
 	border-top: 1px solid $c-highlight;
 	margin-top: $b-space;
 	margin-bottom: $b-space;
-
 }
+
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+// ----- Theme ----- //

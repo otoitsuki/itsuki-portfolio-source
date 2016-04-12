@@ -1,80 +1,90 @@
-# Hologram Github Theme
+#Cortana : a sexy Hologram theme
 
-This is a very simple [Github Styleguide](https://github.com/styleguide) inspired theme for Trulia's [Hologram](https://github.com/trulia/hologram), the ruby front-end doc generator.
+>Cortana is a nice theme for Trulia's [Hologram](https://github.com/trulia/hologram), the ruby front-end doc generator, and inspired by PebbleRoad's [Tapestry](https://github.com/PebbleRoad/tapestry).
 
-## Preview
+Check the [Demo](http://yago.github.io/Cortana-example)
 
-![Example](example.png?raw=true)
+##Usage
+To install the last version of **Hologram** (required) :
 
-[Visit example styleguide](http://wearecube.github.io/hologram-github-theme-example/styleguide)
-
-## Usage
-
-Install Hologram:
-
-```
+````
 $ gem install hologram
-```
+````
 
-Add this theme to your project using NPM:
 
-```
-$ npm install --save-dev hologram-github-theme
-```
 
-Alternatively you may use Bower:
+To install **Cortana**, use Bower :
 
-```
-$ bower install --save-dev hologram-github-theme
-```
+````
+$ bower install --save-dev Cortana
+````
 
-Define the theme in your `hologram_config.yml`:
+Your `hologram_config.yml` should look like :
 
-```
-# Relative path(s) to your source files
-source: app/styles
+````
+# Directory to parse
+source: ./your-code
 
-# Relative path where you want the documentation to be built
-destination: styleguide
+# Directory to build the styleguide
+destination: ./styleguide
 
-# The path that contains supporting assets for the documentation page
-documentation_assets: node_modules/hologram-github-theme
+# Hologram theme
+documentation_assets: ./bower_components/Cortana
+custom_markdown: ./bower_components/Cortana/CortanaMarkdownRenderer.rb
 
-# Category that will be used as the index.html (optional)
-index: styleguide
+# To have a custom index page build with your README.md
+index: README
 
-# A list of relative paths to folders containing any dependencies to copy
-dependencies:
-  - 'dist'
-
-# The CSS files to be included in the styleguide
+# List all css to include for the styleguide render examples (path from styleguide directory)
 css_include:
-  - 'dist/styles/vendor.css'
-  - 'dist/styles/main.css'
+  - '../assets/css/vendors.css'
+  - '../assets/css/styles.css'
 
-# The JavaScript files to included in the styleguide
+# List all js to include for the styleguide render examples (path from styleguide directory)
 js_include:
-  - 'dist/scripts/main.js'
+  - 'http://code.jquery.com/jquery-1.10.2.min.js'
+  - '../assets/js/main.js'
 
-# The global title that is displayed at the top of the pages
-global_title: Styleguide
+# String who is used to split the category name and create category wrapper
+name_scope: ' - '
+````
 
-```
+We recomand to place a `README.md` in the root of your source directory to build a custom styleguide index page.
 
-In this example the markdown file `app/styles/styleguide.md` is used for the content on the index page. Also, if you're using Bower, adjust the package path accordingly: ```documentation_assets: bower_components/hologram-github-theme```.
+To have add a **custom category wrapper** like in the example, just add it before your category name with `space-space` and before all the other categories in the same wrapper. This `name_scope` can be change in the `hologram_config.yml`. You will have something like this :
 
-For more details on the options, checkout the [Hologram documentation](https://github.com/trulia/hologram/blob/master/README.md#creating-a-yaml-config-file)
+````
+/*doc
+---
+title: My Title
+name: myname
+category: General - Button
+---
 
-Finally, build the styleguide:
+Some Markdown comment and markup...
 
-```
-hologram -c hologram_config.yml
-```
+*/
+````
 
-## Authors
+## Edition
+To edit **Cortana** you will need [Bower](bower.io),  [npm](https://www.npmjs.org) and [NodeJS](http://nodejs.org/)
 
-The Hologram Github Theme has been created by [Mathis Hofer](https://github.com/hupf). Many thanks to [Maurice Kühlborn](https://github.com/minimalweb) and [Oscar](https://github.com/obartra) for their contributions.
+To setup the project :
 
-## License
+````
+$ npm install
+$ bower install
+$ gulp
+````
 
-The Hologram Github Theme is licensed under the [MIT License](LICENSE)
+##@TODO
+
+* Dark theme
+
+##Dependencies
+* [jQuery](https://github.com/jquery/jquery)
+* [Angular.js](https://github.com/angular/angular.js), by Google
+* [Angular-Strap](https://github.com/mgcrea/angular-strap), by Mgcrea
+* [AngularUI Bootstrap](https://github.com/angular-ui/bootstrap), by AngularUI
+* [Slidebars](https://github.com/adchsm/Slidebars), by adchsm
+

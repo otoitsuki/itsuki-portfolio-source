@@ -1,19 +1,15 @@
 
-/*doc
----
-title: Readme
-category: basic
----
+// -------------------------------------
+//   Itsuki's Framework
+// -------------------------------------
 
-StyleGuide 說明
-
-*/
+// base on MVCSS
 
 // -------------------------------------
 //   License
 // -------------------------------------
 
-/* (c) 2015 Itsuki. http://otoitsuki.info  */
+/* (c) 2016 Itsuki. http://otoitsuki.info  */
 
 
 // -------------------------------------
@@ -90,25 +86,20 @@ StyleGuide 說明
 //   Components 網站可重複使用元件
 // -------------------------------------
 
-// 需調整元件 //
-
 //  Grid //
 @import "components/grid";
 
 // Title //
 @import "components/title";
 
-// List //
-@import "components/list";
-
 // Table //
 @import "components/table";
 
-// form //
-@import "components/form/form";
 
-// Button //
+// Form //
+@import "components/form/form";
 @import "components/form/button";
+@import "components/form/form-address";
 
 // alert //
 @import "components/alert";
@@ -129,20 +120,17 @@ StyleGuide 說明
 // hr //
 @import "components/hr";
 
-// block //
-@import "components/block";
 
+// Loading anime
+@import "components/loading-anime";
 
-// 固有元件 //
+// 偏 Vendor 系的元件 //
 
 // y2b RWD
 //@import "components/y2b";
 
-// csswizard 的 flag-object
-//@import "components/flag-object";
-
 // bootstrap 的 media-object
-// @import "components/media-object";
+@import "components/media-object";
 
 // buttons http://alexwolfe.github.io/Buttons/
 // @import "components/buttons/buttons";
@@ -153,14 +141,6 @@ StyleGuide 說明
 // Social Buttons
 @import "components/social-buttons";
 
-// Loading anime
-@import "components/loading-anime";
-// -------------------------------------
-//   Components > Modules 本站可重複使用元件
-// -------------------------------------
-
-// 商品模組
-// @import "structures/modules/mod-product";
 
 
 // -------------------------------------
@@ -175,21 +155,30 @@ StyleGuide 說明
 
 // @import "structures/main-nav";
 
-// -------------------------------------
-//   Page
-// -------------------------------------
-// 頁面
+// ContentWrapper //
+@import "structures/list";
+@import "structures/block";
+@import "structures/container";
 
-// @import "page/page";
-// @import "page/index";
+// -------------------------------------
+//   Structures > Modules 本站可重複使用元件
+// -------------------------------------
+
+// 商品模組
+// @import "structures/modules/mod-product";
+
 
 // -------------------------------------
 //   Vendor
 // -------------------------------------
 
+// 給cortana style guide用
+
+.codeBlock .nc {
+	color: #02B25B;
+}
 
 // -------------------------------------
 //   Inbox
 // -------------------------------------
-
 

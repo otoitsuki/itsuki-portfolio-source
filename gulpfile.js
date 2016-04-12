@@ -124,7 +124,7 @@ gulp.task('watch', function() {
   // Watch image files
   gulp.watch('source/images/**/*', ['images']);
 
-  // Watch html files
+  // Watch slim files
   gulp.watch('source/**/*.slim', ['html']);
 
   // Create LiveReload server
@@ -145,7 +145,7 @@ gulp.task('watch', function() {
 
 // Gulp default 工作 browserSync Ver.
 gulp.task('default',['watch'],  function() {  
-   gulp.start('styles', 'scripts' , 'images', 'html','hologram');
+   gulp.start('styles', 'scripts' , 'images', 'html', 'hologram');
 });
 
 // ========================================================

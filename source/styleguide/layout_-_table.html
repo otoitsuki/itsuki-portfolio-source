@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Typography</title>
+    <title>Layout - Table</title>
 
     <!-- Styleguide CSS -->
     <link rel="stylesheet" href="./theme-build/css/vendors.css">
@@ -36,6 +36,14 @@
       
         
         
+          
+        
+      
+        
+        
+      
+        
+        
       
         
         
@@ -49,14 +57,6 @@
         
         
           
-        
-      
-        
-        
-          
-        
-      
-        
         
       
         
@@ -89,6 +89,8 @@
             
           
             
+          
+            
               
               
                 <li><a href="layout_-_form.html">Form</a></li>
@@ -105,7 +107,7 @@
             
               
               
-                <li><a href="layout_-_hr.html">hr</a></li>
+                <li><a href="layout_-_hr.html">Hr</a></li>
               
             
           
@@ -125,14 +127,7 @@
             
               
               
-                <li><a href="layout_-_grid.html">Grid</a></li>
-              
-            
-          
-            
-              
-              
-                <li><a href="layout_-_table.html">Table</a></li>
+                <li><a class="active" href="layout_-_table.html">Table</a></li>
               
             
           
@@ -143,6 +138,13 @@
           <h3>Structure</h3>
           <ul>
           
+            
+          
+            
+              
+              
+                <li><a href="structure_-_contentwrapper.html">ContentWrapper</a></li>
+              
             
           
             
@@ -168,12 +170,12 @@
           
             
           
-            
-          
           </ul>
         
           <h3>Components</h3>
           <ul>
+          
+            
           
             
           
@@ -205,11 +207,9 @@
           
             
           
-            
-          
           </ul>
         
-          <h3>Typography</h3>
+          <h3>Foundation</h3>
           <ul>
           
             
@@ -235,7 +235,7 @@
             
               
               
-                <li><a class="active" href="typography.html">Typography</a></li>
+                <li><a href="foundation_-_typography.html">Typography</a></li>
               
             
           
@@ -246,7 +246,7 @@
 
     <header class="cortana-header sb-slide">
       
-        <h1>Typography</h1>
+        <h1>Table</h1>
       
       <div id="open-left" class="cortana-menu-btn">
         <span></span>
@@ -266,7 +266,7 @@
           <ul bs-scrollspy-list data-offset="-30">
             
               
-                <li><a href="#Title">Title</a></li>
+                <li><a href="#Table">Table</a></li>
               
             
           </ul>
@@ -277,34 +277,116 @@
 
 
 
-<h1 id="Title" class="styleguide">Title</h1>
-<p class="styleguide">頁面或是區塊的標題</p><div class="codeExample">
+<h1 id="Table" class="styleguide">Table</h1>
+
+<h2>一般 Table</h2>
+<div class="codeExample">
   <div class="exampleOutput">
-    <h1 class="title title--page">頁面標題</h1>
+    <table class="table"><tr><th>項目</th><th>收費標準</th><th>說明</th></tr><tr><td>EDM</td><td>每 200 封 = 1 點</td><td></td></tr><tr><td>簡訊</td><td>每 1 則  = 1 點</td><td>每次發 200 封扣 1 點</td></tr><tr><td>黑貓托運服務</td><td>每件 60 ～ 190 點</td><td>嘎嘎</td></tr></table>
   </div>
   <div class="codeBlock">
     <div class="highlight">
-      <pre><span class="nt">h1</span><span class="nc">.title.title--page</span><span class="w"> </span>頁面標題</pre>
+      <pre><span class="nt">table</span><span class="nc">.table</span>
+  <span class="nt">tr</span>
+    <span class="nt">th</span><span class="w"> </span>項目
+    <span class="nt">th</span><span class="w"> </span>收費標準
+    <span class="nt">th</span><span class="w"> </span>說明
+  <span class="nt">tr</span>
+    <span class="nt">td</span><span class="w"> </span>EDM
+    <span class="nt">td</span><span class="w"> </span>每<span class="w"> </span>200<span class="w"> </span>封<span class="w"> </span><span class="p">=</span> <span class="mi">1</span> <span class="err">點</span>
+    <span class="nt">td</span>
+  <span class="nt">tr</span>
+    <span class="nt">td</span><span class="w"> </span>簡訊
+    <span class="nt">td</span><span class="w"> </span>每<span class="w"> </span>1<span class="w"> </span>則<span class="w">  </span><span class="p">=</span> <span class="mi">1</span> <span class="err">點</span>
+    <span class="nt">td</span><span class="w"> </span>每次發<span class="w"> </span>200<span class="w"> </span>封扣<span class="w"> </span>1<span class="w"> </span>點
+  <span class="nt">tr</span>
+    <span class="nt">td</span><span class="w"> </span>黑貓托運服務
+    <span class="nt">td</span><span class="w"> </span>每件<span class="w"> </span>60<span class="w"> </span>～<span class="w"> </span>190<span class="w"> </span>點
+    <span class="nt">td</span><span class="w"> </span>嘎嘎</pre>
     </div>
   </div>
 </div>
+
+<h2>md-table</h2>
 <div class="codeExample">
   <div class="exampleOutput">
-    <h1 class="title title--page">區塊標題</h1>
+    <table class="table md-table"><tr><th>項目</th><th>收費標準</th><th>說明</th></tr><tr><td>EDM</td><td>每 200 封 = 1 點</td><td></td></tr><tr><td>簡訊</td><td>每 1 則  = 1 點</td><td>每次發 200 封扣 1 點</td></tr><tr><td>黑貓托運服務</td><td>每件 60 ～ 190 點</td><td>嘎嘎</td></tr></table>
   </div>
   <div class="codeBlock">
     <div class="highlight">
-      <pre><span class="nt">h1</span><span class="nc">.title.title--page</span><span class="w"> </span>區塊標題</pre>
+      <pre><span class="nt">table</span><span class="nc">.table.md-table</span>
+  <span class="nt">tr</span>
+    <span class="nt">th</span><span class="w"> </span>項目
+    <span class="nt">th</span><span class="w"> </span>收費標準
+    <span class="nt">th</span><span class="w"> </span>說明
+  <span class="nt">tr</span>
+    <span class="nt">td</span><span class="w"> </span>EDM
+    <span class="nt">td</span><span class="w"> </span>每<span class="w"> </span>200<span class="w"> </span>封<span class="w"> </span><span class="p">=</span> <span class="mi">1</span> <span class="err">點</span>
+    <span class="nt">td</span>
+  <span class="nt">tr</span>
+    <span class="nt">td</span><span class="w"> </span>簡訊
+    <span class="nt">td</span><span class="w"> </span>每<span class="w"> </span>1<span class="w"> </span>則<span class="w">  </span><span class="p">=</span> <span class="mi">1</span> <span class="err">點</span>
+    <span class="nt">td</span><span class="w"> </span>每次發<span class="w"> </span>200<span class="w"> </span>封扣<span class="w"> </span>1<span class="w"> </span>點
+  <span class="nt">tr</span>
+    <span class="nt">td</span><span class="w"> </span>黑貓托運服務
+    <span class="nt">td</span><span class="w"> </span>每件<span class="w"> </span>60<span class="w"> </span>～<span class="w"> </span>190<span class="w"> </span>點
+    <span class="nt">td</span><span class="w"> </span>嘎嘎</pre>
     </div>
   </div>
 </div>
+
+<h2>md-table-condensed</h2>
 <div class="codeExample">
   <div class="exampleOutput">
-    <h1 class="title title--page">內文標題</h1>
+    <table class="table md-table-condensed"><tr><th>項目</th><th>收費標準</th><th>說明</th></tr><tr><td>EDM</td><td>每 200 封 = 1 點</td><td></td></tr><tr><td>簡訊</td><td>每 1 則  = 1 點</td><td>每次發 200 封扣 1 點</td></tr><tr><td>黑貓托運服務</td><td>每件 60 ～ 190 點</td><td>嘎嘎</td></tr></table>
   </div>
   <div class="codeBlock">
     <div class="highlight">
-      <pre><span class="nt">h1</span><span class="nc">.title.title--page</span><span class="w"> </span>內文標題</pre>
+      <pre><span class="nt">table</span><span class="nc">.table.md-table-condensed</span>
+  <span class="nt">tr</span>
+    <span class="nt">th</span><span class="w"> </span>項目
+    <span class="nt">th</span><span class="w"> </span>收費標準
+    <span class="nt">th</span><span class="w"> </span>說明
+  <span class="nt">tr</span>
+    <span class="nt">td</span><span class="w"> </span>EDM
+    <span class="nt">td</span><span class="w"> </span>每<span class="w"> </span>200<span class="w"> </span>封<span class="w"> </span><span class="p">=</span> <span class="mi">1</span> <span class="err">點</span>
+    <span class="nt">td</span>
+  <span class="nt">tr</span>
+    <span class="nt">td</span><span class="w"> </span>簡訊
+    <span class="nt">td</span><span class="w"> </span>每<span class="w"> </span>1<span class="w"> </span>則<span class="w">  </span><span class="p">=</span> <span class="mi">1</span> <span class="err">點</span>
+    <span class="nt">td</span><span class="w"> </span>每次發<span class="w"> </span>200<span class="w"> </span>封扣<span class="w"> </span>1<span class="w"> </span>點
+  <span class="nt">tr</span>
+    <span class="nt">td</span><span class="w"> </span>黑貓托運服務
+    <span class="nt">td</span><span class="w"> </span>每件<span class="w"> </span>60<span class="w"> </span>～<span class="w"> </span>190<span class="w"> </span>點
+    <span class="nt">td</span><span class="w"> </span>嘎嘎</pre>
+    </div>
+  </div>
+</div>
+
+<h2>md-table-striped</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <table class="table md-table-striped"><tr><th>項目</th><th>收費標準</th><th>說明</th></tr><tr><td>EDM</td><td>每 200 封 = 1 點</td><td></td></tr><tr><td>簡訊</td><td>每 1 則  = 1 點</td><td>每次發 200 封扣 1 點</td></tr><tr><td>黑貓托運服務</td><td>每件 60 ～ 190 點</td><td>嘎嘎</td></tr></table>
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">table</span><span class="nc">.table.md-table-striped</span>
+  <span class="nt">tr</span>
+    <span class="nt">th</span><span class="w"> </span>項目
+    <span class="nt">th</span><span class="w"> </span>收費標準
+    <span class="nt">th</span><span class="w"> </span>說明
+  <span class="nt">tr</span>
+    <span class="nt">td</span><span class="w"> </span>EDM
+    <span class="nt">td</span><span class="w"> </span>每<span class="w"> </span>200<span class="w"> </span>封<span class="w"> </span><span class="p">=</span> <span class="mi">1</span> <span class="err">點</span>
+    <span class="nt">td</span>
+  <span class="nt">tr</span>
+    <span class="nt">td</span><span class="w"> </span>簡訊
+    <span class="nt">td</span><span class="w"> </span>每<span class="w"> </span>1<span class="w"> </span>則<span class="w">  </span><span class="p">=</span> <span class="mi">1</span> <span class="err">點</span>
+    <span class="nt">td</span><span class="w"> </span>每次發<span class="w"> </span>200<span class="w"> </span>封扣<span class="w"> </span>1<span class="w"> </span>點
+  <span class="nt">tr</span>
+    <span class="nt">td</span><span class="w"> </span>黑貓托運服務
+    <span class="nt">td</span><span class="w"> </span>每件<span class="w"> </span>60<span class="w"> </span>～<span class="w"> </span>190<span class="w"> </span>點
+    <span class="nt">td</span><span class="w"> </span>嘎嘎</pre>
     </div>
   </div>
 </div>
@@ -343,9 +425,29 @@
               
               
               {
+              "title": "Row",
+              "breadcrumb": "Layout - ContentWrapper > Row",
+              "path": "layout_-_contentwrapper.html#Row"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
               "title": "Block",
-              "breadcrumb": "Layout - ContentWrapper > Block",
-              "path": "layout_-_contentwrapper.html#Block"
+              "breadcrumb": "Structure - ContentWrapper > Block",
+              "path": "structure_-_contentwrapper.html#Block"
+              },
+            
+              
+              
+              {
+              "title": "Container",
+              "breadcrumb": "Structure - ContentWrapper > Container",
+              "path": "structure_-_contentwrapper.html#Container"
               },
             
           
@@ -366,6 +468,14 @@
               "title": "Form",
               "breadcrumb": "Layout - Form > Form",
               "path": "layout_-_form.html#Form"
+              },
+            
+              
+              
+              {
+              "title": "Form Address",
+              "breadcrumb": "Layout - Form > Form Address",
+              "path": "layout_-_form.html#Form_Address"
               },
             
               
@@ -396,7 +506,7 @@
               
               {
               "title": "Hr",
-              "breadcrumb": "Layout - hr > Hr",
+              "breadcrumb": "Layout - Hr > Hr",
               "path": "layout_-_hr.html#Hr"
               },
             
@@ -479,18 +589,6 @@
               
               
               {
-              "title": "Row",
-              "breadcrumb": "Layout - Grid > Row",
-              "path": "layout_-_grid.html#Row"
-              },
-            
-          
-        
-          
-            
-              
-              
-              {
               "title": "Table",
               "breadcrumb": "Layout - Table > Table",
               "path": "layout_-_table.html#Table"
@@ -504,8 +602,8 @@
               
               {
               "title": "Title",
-              "breadcrumb": "Typography > Title",
-              "path": "typography.html#Title"
+              "breadcrumb": "Foundation - Typography > Title",
+              "path": "foundation_-_typography.html#Title"
               },
             
           

@@ -1,10 +1,93 @@
-// *************************************
-//
-//   Form
-//     
-//
-// *************************************
+/*doc
+---
+title: Form
+category: Layout - Form
+---
 
+## Input
+
+```slim_example
+
+input type="text" placeholder="文字輸入欄" required="required"/
+input type="number" placeholder="數字輸入欄" pattern="\d*"/
+input type="date" required="required"/
+.search-input
+  input.search-query type="search" placeholder="搜尋商品名稱或商店名稱"/
+  button.search-btn type="submit" 
+    img src="assets/images/btn_input_search_default.png" srcset="assets/images/btn_input_search_default@2x.png" alt=""/
+.search-input.search-sp
+  input.search-query type="search" placeholder="搜尋商品名稱或商店名稱"/
+  button.search-btn type="submit" 
+    img src="assets/images/btn_input_search_default.png" srcset="assets/images/btn_input_search_default@2x.png" alt=""/
+input.disabled type="text" placeholder="無法填寫" /
+select name="styleguide"
+  option value="default" selected="selected" 預設選項
+  option value="1" 選項1
+  option value="2" 選項2
+  option value="3" 選項3
+  option value="4" 選項4
+  option value="5" 選項5
+textarea name="" cols="30" rows="10" placeholder="多行填入"
+
+input.search-sp type="search" placeholder="搜尋商品名稱或商店名稱"/
+
+input#radio1 name="radio1" type="radio" value="radio1" /
+label for="radio1"  radio1
+input#radio2 name="radio1" type="radio" value="radio2" /
+label for="radio2"  radio2
+input#checkbox1 name="checkbox1" type="checkbox" value="checkbox1" /
+label for="checkbox1"  checkbox1
+input#checkbox2 name="checkbox1" type="checkbox" value="checkbox2" /
+label for="checkbox2"  checkbox2
+
+```
+
+## form-inline
+
+```slim_example
+form.form-inline
+  input type="text" placeholder="文字輸入欄" required="required"/
+  input type="number"  required="required"/
+  input type="date"  required="required"/
+  .search-input
+    input.search-query type="search" placeholder="搜尋商品名稱或商店名稱"/
+    button.search-btn type="submit" 
+      img src="assets/images/btn_input_search_default.png" srcset="assets/images/btn_input_search_default@2x.png" alt=""/
+  .search-input.search-sp
+    input.search-query type="search" placeholder="搜尋商品名稱或商店名稱"/
+    button.search-btn type="submit" 
+      img src="assets/images/btn_input_search_default.png" srcset="assets/images/btn_input_search_default@2x.png" alt=""/
+  input.disabled type="text" placeholder="無法填寫" /
+  select name="styleguide"
+    option value="default" selected="selected" 預設選項
+    option value="1" 選項1
+    option value="2" 選項2
+    option value="3" 選項3
+    option value="4" 選項4
+    option value="5" 選項5
+  textarea name="" cols="30" rows="10" placeholder="多行填入"
+  input.search-sp type="search" placeholder="搜尋商品名稱或商店名稱"/
+  input type="radio" name="styleguide" value="1" checked="checked"/ 
+  input#radio-inline1 name="radio2" type="radio" value="radio-inline1" /
+  label for="radio-inline1"  radio1
+  input#radio-inline2 name="radio2" type="radio" value="radio-inline2" /
+  label for="radio-inline2"  radio-inline2
+  input#checkbox-inline1 name="checkbox2" type="checkbox" value="checkbox-inline1" /
+  label for="checkbox-inline1"  checkbox1
+  input#checkbox-inline2 name="checkbox2" type="checkbox" value="checkbox-inline2" /
+  label for="checkbox-inline2"  checkbox2
+```
+
+## 單一區塊表單
+
+單一區塊表單，沒有段落分隔（所以欄位間距要比較多）
+
+```slim_example
+.form.form--singleblock
+  input type="text" placeholder="文字輸入欄" required="required"/
+```
+
+*/
 .form {}
 
 

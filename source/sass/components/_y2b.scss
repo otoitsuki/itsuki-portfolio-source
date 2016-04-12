@@ -2,15 +2,15 @@
 /*doc
 ---
 title: Youtube iframe
-category: Other Components
+category: Components - Other
 ---
 
 可以讓Y2b影片符合RWD
 
-```html_example
-<div class="movie y2b">
-  <iframe src='http://www.youtube.com/embed/UpA7VYz__mc' frameborder='0' allowfullscreen></iframe>
-</div>
+```slim_example
+.movie.y2b
+  iframe allowfullscreen="" frameborder="0" src="http://www.youtube.com/embed/blabal" 
+
 ```
 */
 

@@ -2,119 +2,100 @@
 /*doc
 ---
 title: Table
-category: Table
+category: Layout - Table
 ---
 
 ## 一般 Table
 
-```html_example
-<table class="table">
-  <tr>
-    <th>項目</th>
-    <th>收費標準</th>
-    <th>說明</th>
-  </tr>
-  <tr>
-    <td>EDM</td>
-    <td>每 200 封 = 1 點</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>簡訊</td>
-    <td>每 1 則  = 1 點</td>
-    <td>每次發 200 封扣 1 點</td>
-  </tr>
-  <tr>
-    <td>黑貓托運服務</td>
-    <td>每件 60 ～ 190 點</td>
-    <td>嘎嘎</td>
-  </tr>
-</table>
+```slim_example
+table.table
+  tr
+    th 項目
+    th 收費標準
+    th 說明
+  tr
+    td EDM
+    td 每 200 封 = 1 點
+    td
+  tr
+    td 簡訊
+    td 每 1 則  = 1 點
+    td 每次發 200 封扣 1 點
+  tr
+    td 黑貓托運服務
+    td 每件 60 ～ 190 點
+    td 嘎嘎
 ```	
 
 
 
 ## md-table
 
-```html_example
-<table class="table md-table">
-  <tr>
-    <th>項目</th>
-    <th>收費標準</th>
-    <th>說明</th>
-  </tr>
-  <tr>
-    <td>EDM</td>
-    <td>每 200 封 = 1 點</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>簡訊</td>
-    <td>每 1 則  = 1 點</td>
-    <td>每次發 200 封扣 1 點</td>
-  </tr>
-  <tr>
-    <td>黑貓托運服務</td>
-    <td>每件 60 ～ 190 點</td>
-    <td>嘎嘎</td>
-  </tr>
-</table>
+```slim_example
+table.table.md-table
+  tr
+    th 項目
+    th 收費標準
+    th 說明
+  tr
+    td EDM
+    td 每 200 封 = 1 點
+    td
+  tr
+    td 簡訊
+    td 每 1 則  = 1 點
+    td 每次發 200 封扣 1 點
+  tr
+    td 黑貓托運服務
+    td 每件 60 ～ 190 點
+    td 嘎嘎
+
 ```	
 
 
 ## md-table-condensed
 
-```html_example
-<table class="table md-table-condensed">
-  <tr>
-    <th>項目</th>
-    <th>收費標準</th>
-    <th>說明</th>
-  </tr>
-  <tr>
-    <td>EDM</td>
-    <td>每 200 封 = 1 點</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>簡訊</td>
-    <td>每 1 則  = 1 點</td>
-    <td>每次發 200 封扣 1 點</td>
-  </tr>
-  <tr>
-    <td>黑貓托運服務</td>
-    <td>每件 60 ～ 190 點</td>
-    <td>嘎嘎</td>
-  </tr>
-</table>
+```slim_example
+table.table.md-table-condensed
+  tr
+    th 項目
+    th 收費標準
+    th 說明
+  tr
+    td EDM
+    td 每 200 封 = 1 點
+    td
+  tr
+    td 簡訊
+    td 每 1 則  = 1 點
+    td 每次發 200 封扣 1 點
+  tr
+    td 黑貓托運服務
+    td 每件 60 ～ 190 點
+    td 嘎嘎
 ```	
 
 
 ## md-table-striped
 
-```html_example
-<table class="table md-table-striped">
-  <tr>
-    <th>項目</th>
-    <th>收費標準</th>
-    <th>說明</th>
-  </tr>
-  <tr>
-    <td>EDM</td>
-    <td>每 200 封 = 1 點</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>簡訊</td>
-    <td>每 1 則  = 1 點</td>
-    <td>每次發 200 封扣 1 點</td>
-  </tr>
-  <tr>
-    <td>黑貓托運服務</td>
-    <td>每件 60 ～ 190 點</td>
-    <td>嘎嘎</td>
-  </tr>
-</table>
+```slim_example
+table.table.md-table-striped
+  tr
+    th 項目
+    th 收費標準
+    th 說明
+  tr
+    td EDM
+    td 每 200 封 = 1 點
+    td
+  tr
+    td 簡訊
+    td 每 1 則  = 1 點
+    td 每次發 200 封扣 1 點
+  tr
+    td 黑貓托運服務
+    td 每件 60 ～ 190 點
+    td 嘎嘎
 ```	
 
 
@@ -135,11 +116,18 @@ category: Table
 	line-height: 1;
 	width: 100%;
 	overflow: hidden;
-	@extend %tC;
+	// @extend %tC;
 	a {
 		font-size: inherit;
 	}
 }
+
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+// ----- Theme ----- //
 
 //-------------------------------------
 // Material Design Responsive Table

@@ -1,16 +1,31 @@
-// *************************************
-//
-//   Row
-//   -> Width-spanning blocks
-//
-// -------------------------------------
-//   Template (Haml)
-// -------------------------------------
-//
-// .row[.row--a|b]
-//   / ...
-//
-// *************************************
+/*doc
+---
+title: Row
+category: Layout - ContentWrapper
+---
+
+Width-spanning blocks
+
+
+## 一般 row
+
+```slim_example
+.row content
+```
+
+## important bgcolor row
+
+```slim_example
+.row.row--a content
+```
+
+##
+
+```slim_example
+.row.row--b content
+```
+
+*/
 
 .row {
   overflow: hidden;
