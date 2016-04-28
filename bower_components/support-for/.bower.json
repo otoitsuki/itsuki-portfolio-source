@@ -21,14 +21,14 @@
     "support-for.gemspec",
     "test"
   ],
-  "version": "1.0.3",
-  "_release": "1.0.3",
+  "version": "1.0.5",
+  "_release": "1.0.5",
   "_resolution": {
     "type": "version",
-    "tag": "1.0.3",
-    "commit": "20ba4f25917cea644fc68041e3e1607827d52b64"
+    "tag": "1.0.5",
+    "commit": "690191274a15ec4de07a1f240ce365bba519b6c0"
   },
-  "_source": "git://github.com/JohnAlbin/support-for.git",
+  "_source": "https://github.com/JohnAlbin/support-for.git",
   "_target": "~1.0.2",
   "_originalSource": "support-for"
 }

@@ -8,16 +8,18 @@ category: Layout - Form
 
 ```slim_example
 
+label for="text" 文字輸入欄
+input#text-input name="text" type="text" placeholder="text" autocomplete="email" required="required"/
 input type="text" placeholder="文字輸入欄" required="required"/
 input type="number" placeholder="數字輸入欄" pattern="\d*"/
 input type="date" required="required"/
 .search-input
   input.search-query type="search" placeholder="搜尋商品名稱或商店名稱"/
-  button.search-btn type="submit" 
+  button.search-btn type="submit"
     img src="assets/images/btn_input_search_default.png" srcset="assets/images/btn_input_search_default@2x.png" alt=""/
 .search-input.search-sp
   input.search-query type="search" placeholder="搜尋商品名稱或商店名稱"/
-  button.search-btn type="submit" 
+  button.search-btn type="submit"
     img src="assets/images/btn_input_search_default.png" srcset="assets/images/btn_input_search_default@2x.png" alt=""/
 input.disabled type="text" placeholder="無法填寫" /
 select name="styleguide"
@@ -51,11 +53,11 @@ form.form-inline
   input type="date"  required="required"/
   .search-input
     input.search-query type="search" placeholder="搜尋商品名稱或商店名稱"/
-    button.search-btn type="submit" 
+    button.search-btn type="submit"
       img src="assets/images/btn_input_search_default.png" srcset="assets/images/btn_input_search_default@2x.png" alt=""/
   .search-input.search-sp
     input.search-query type="search" placeholder="搜尋商品名稱或商店名稱"/
-    button.search-btn type="submit" 
+    button.search-btn type="submit"
       img src="assets/images/btn_input_search_default.png" srcset="assets/images/btn_input_search_default@2x.png" alt=""/
   input.disabled type="text" placeholder="無法填寫" /
   select name="styleguide"
@@ -67,7 +69,7 @@ form.form-inline
     option value="5" 選項5
   textarea name="" cols="30" rows="10" placeholder="多行填入"
   input.search-sp type="search" placeholder="搜尋商品名稱或商店名稱"/
-  input type="radio" name="styleguide" value="1" checked="checked"/ 
+  input type="radio" name="styleguide" value="1" checked="checked"/
   input#radio-inline1 name="radio2" type="radio" value="radio-inline1" /
   label for="radio-inline1"  radio1
   input#radio-inline2 name="radio2" type="radio" value="radio-inline2" /
@@ -136,10 +138,11 @@ input[type="tel"],
 input[type="color"] {
   @extend %form-base;
   color: $c-text;
-  background-color: #fff;
+  background-color: lighten($c-text,60);
   padding: 0.5em;
   outline: none; // 去掉outline後一定要加:FOUCS
-  border: 1px solid #DDDDDD;
+  border: 0;
+  border-radius: 6px;
   // for ios mobile system, convert onclick to touch
   @include susy-media(0 1024px) {
     cursor: pointer;
@@ -169,11 +172,11 @@ label {
 // radio button & checkbox
 // 因為行動版預設radio button太小，要重畫
 
-// ------- 設計邏輯 ------- 
+// ------- 設計邏輯 -------
 // 1. 隱藏原本的圈圈
 // 2. 用label的before偽元素設計圈圈
 // 3. 用連接選擇器選取input:checked + label，設計出點下圈圈時的樣式
-// 【注意】要用label for 和 radio id 綁定（radio一定要設和label for一樣的id）才有用!!!!!! 
+// 【注意】要用label for 和 radio id 綁定（radio一定要設和label for一樣的id）才有用!!!!!!
 
 input[type="radio"] {
     display: none;
@@ -203,11 +206,11 @@ input[type="radio"] {
         cursor: default;
 
         &::before {
-            border-color: #fff !important;
-            background-color: #fff !important;
+            border-color: #fff;
+            background-color: #fff;
             box-shadow: inset 0 0 0 pxtorem(9px) $c-highlight;
         }
-    }  
+    }
 }
 
 input[type="checkbox"] {
@@ -216,7 +219,8 @@ input[type="checkbox"] {
     & + label {
         display: block;
         cursor: pointer;
-        margin: 20px;
+        margin-top: $b-space-v-s;
+        margin-bottom: $b-space-v-s;
 
         /*通常時の見た目*/
         &::before {
@@ -236,16 +240,16 @@ input[type="checkbox"] {
             transition: .1s;
             box-sizing: border-box;
         }
-    } 
+    }
     /*checked時の見た目*/
     &:checked + label {
-        color: $c-highlight;            
+        color: $c-highlight;
         &::before {
             background: $c-highlight !important;
             border-color: #fff !important;
             color: #fff !important;
         }
-    }  
+    }
 }
 
 
@@ -259,16 +263,16 @@ select,textarea,input {
   box-shadow: 0px 0px 2px 0px rgba($c-background,0);
   // 點擊時的設計
   &:focus {
-    transition: all 0.2s ease-in-out; 
+    transition: all 0.2s ease-in-out;
     box-shadow: 0px 0px 2px 0px rgba($c-highlight,1);
     border: none;
   }
   // 必填
-  &:focus:invalid {
-    transition: all 0.2s ease-in-out; 
-    box-shadow: 0px 0px 2px 0px rgba($c-important,1);
-    border: none;
-  }
+  // &:focus:invalid {
+  //   transition: all 0.2s ease-in-out;
+  //   box-shadow: 0px 0px 2px 0px rgba($c-important,1);
+  //   border: none;
+  // }
   // Disable
   &.disabled,
   &[disabled],
@@ -289,15 +293,13 @@ select,textarea,input {
   @extend %clearfix;
   box-sizing: border-box;
   line-height: $b-lineHeight;
-  vertical-align: middle;
-  margin-top: $b-space-s;
-  margin-bottom: $b-space-s;
   display: block;
   max-width: 100%;
   .search-query  {
     box-sizing: border-box;
-    background-color: #fff;
-    box-shadow: 0px 0px 2px 0px #DDD;
+    // color: $c-text;
+    // background-color: lighten($c-text,60);
+    border-radius: 4px;
     display: inline-block;
     width: 100%;
     float: left;
@@ -326,8 +328,6 @@ select,textarea,input {
     min-height: 18px;
   }
 }
-
-
 // search 首頁用
 .search-input.search-sp {
   .search-query {
@@ -339,7 +339,7 @@ select,textarea,input {
       border: 1px solid $c-highlight;
     }
   }
-  
+
 }
 
 
@@ -351,11 +351,22 @@ select,textarea,input {
 // -------------------------------------
 
 .form-inline {
+  margin-bottom: $b-space-v;
   select,textarea,input,label {
-      display: inline-block;
-      vertical-align: middle;
-      margin: 0;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
   }
+  label {
+    padding: 0.5em;
+    line-height: 1.5;
+  }
+  .register-cta {
+    .btn {
+      width: 80%
+    }
+  }
+
 
   input[type="checkbox"] , input[type="radio"]  {
     display: none;
@@ -363,7 +374,6 @@ select,textarea,input {
       display: inline-block;
     }
   }
-
   .col-xs-1,.col-xs-2,.col-xs-3,.col-xs-4 {
     float: none;
   }

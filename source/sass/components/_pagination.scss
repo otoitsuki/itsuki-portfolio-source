@@ -1,0 +1,28 @@
+/*doc
+---
+title: Pagination
+category: Inbox
+---
+
+
+```slim_example
+
+```
+
+*/
+
+.pagination {
+  // @extend %blockC;
+  @extend %tC;
+  font-size: $b-fontSize-l;
+  .pagination-number {
+    @include scut-list-inline;
+    li {
+      margin-left: $b-space-s;
+      a {
+        display: block;
+      }
+    }
+  }
+}
+

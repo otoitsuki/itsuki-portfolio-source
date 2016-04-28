@@ -5,7 +5,7 @@ category: Layout - Form
 ---
 
 ```slim_example
-a.btn.btn-default Default
+a.btn.btn-primary Primary
 a.btn.btn-important Important
 a.btn.btn-secondary Secondary
 a.btn.btn-default.disabled Disabled
@@ -19,20 +19,20 @@ a.btn.btn-default.disabled Disabled
   display: inline-block;
   font-size: pxtorem($b-fontSize);
   line-height: $b-lineHeight;
-  font-weight: bold;
+  // font-weight: bold;
   text-align: center;
   vertical-align: middle;
   background-color: transparent;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-  border: 3px solid transparent;
-  border-radius: 0;
+  border: 1px solid transparent;
+  border-radius: 6px;
   min-width: pxtoem($b-fontSize*6);
-  padding: .6em 1em;
-  margin-bottom: $b-space;
+  padding: .3em 2em;
+  margin-bottom: $b-space-v;
   touch-action: manipulation;
   cursor: pointer;
   white-space: nowrap;
-     
+
 
   // &,
   // &:active,
@@ -78,7 +78,7 @@ a.btn {
 
 
 // -------------------------------------
-//   Modifiers 風格種類
+//   Button Mixin
 // -------------------------------------
 // From bootstrap-button-mixin
 
@@ -138,14 +138,20 @@ a.btn {
 
 }
 
-.btn.btn-default {
-  @include button-variant(#fff, $c-highlight, $c-highlight);
+// -------------------------------------
+//   Modifiers 風格種類
+// -------------------------------------
+
+
+.btn.btn-primary {
+  @include button-variant(#fff, $c-highlight-dark, $c-highlight-dark);
 }
 // Warning appears as orange
 .btn.btn-important {
-  @include button-variant(#fff, $c-important, $c-important);
+  @include button-variant($c-highlight-dark, $c-highlight-invert, $c-highlight-invert);
 }
 .btn.btn-secondary {
-  @include button-variant($c-highlight, transparent, $c-highlight);
+  @include button-variant($c-highlight-dark, transparent, $c-highlight-dark);
 }
+
 

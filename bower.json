@@ -2,14 +2,13 @@
   "name": "APTG",
   "dependencies": {
     "breakpoint": "~4.6.4",
-    "normalize.scss": "~3.0.2+normalize.3.0.2",
-    "normalize-strings": "normalize#~1.0.4",
     "Swiper": "swiper#~3.3.0",
     "unslider": "~2.0.3",
-    "normalize-scss": "normalize.scss#~4.0.3"
+    "normalize-scss": "normalize.scss#~4.0.3",
+    "sass-mq": "^3.2.9"
   },
   "authors": [
-    "Itsuki <itsuki.lin@sinlead.com>"
+    "Itsuki <otoitsuki@gmail.com>"
   ],
   "description": "",
   "main": "",

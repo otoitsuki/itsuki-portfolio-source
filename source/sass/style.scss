@@ -1,20 +1,18 @@
-
 // -------------------------------------
-//   Itsuki's Framework
+//   Copyright
 // -------------------------------------
 
 // base on MVCSS
-
-// -------------------------------------
-//   License
-// -------------------------------------
-
 /* (c) 2016 Itsuki. http://otoitsuki.info  */
 
 
 // -------------------------------------
 //   Import framework
 // -------------------------------------
+
+// ----- sass-mq ----- //
+
+@import "bower_components/sass-mq/mq";
 
 // ----- Susy ----- //
 
@@ -38,6 +36,10 @@
 // @import "bower_components/inuit-list-inline/objects.list-inline";
 // @import "bower_components/inuit-list-bare/objects.list-bare";
 
+// ----- Scut ----- //
+// https://davidtheclark.github.io/scut/index.html
+
+@import "bower_components/Scut/dist/scut";
 
 // -------------------------------------
 //   Core / Foundation
@@ -57,7 +59,7 @@
 // ----- Reset ----- //
 
 // Normalize.css
-@import "https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css";
 
 // sanitize.css
 // @import 'bower_components/sanitize-css/sanitize';
@@ -69,7 +71,7 @@
 // @import "core/reset/typo";
 
 // Reset CSS
-// @import "compass/reset"; 
+// @import "compass/reset";
 
 // ----- Base ----- //
 
@@ -88,6 +90,7 @@
 
 //  Grid //
 @import "components/grid";
+@import "components/bootstrap-grid";
 
 // Title //
 @import "components/title";
@@ -100,16 +103,13 @@
 @import "components/form/form";
 @import "components/form/button";
 @import "components/form/form-address";
+@import "components/form/amount-control";
 
 // alert //
 @import "components/alert";
 
-
 // indicator //
 @import "components/indicator";
-
-// Row
-@import "components/row";
 
 // label //
 @import "components/label";
@@ -120,8 +120,16 @@
 // hr //
 @import "components/hr";
 
+// pagination //
+@import "components/pagination";
 
-// Loading anime
+// icon-item //
+@import "components/icon-item";
+
+// Gottop Button //
+@import "components/gotop";
+
+// Loading anime //
 @import "components/loading-anime";
 
 // 偏 Vendor 系的元件 //
@@ -147,25 +155,29 @@
 //   Structures 該專案專屬元件
 // -------------------------------------
 
-// @import "structures/header/header";
-// @import "structures/header/logo";
-// @import "structures/header/system-nav";
-// @import "structures/footer/footer";
-// @import "structures/footer/footer-nav";
-
+// @import "structures/header";
+// @import "structures/logo";
+// @import "structures/system-nav";
 // @import "structures/main-nav";
 
+
+// @import "structures/sub-nav";
+// @import "structures/footer";
+// @import "structures/footer-nav";
+
+
 // ContentWrapper //
-@import "structures/list";
-@import "structures/block";
-@import "structures/container";
+// @import "structures/block";
+// @import "structures/container";
 
 // -------------------------------------
 //   Structures > Modules 本站可重複使用元件
 // -------------------------------------
 
 // 商品模組
-// @import "structures/modules/mod-product";
+// @import "structures/mod-product";
+// @import "structures/mod-article";
+// @import "structures/mod-blog";
 
 
 // -------------------------------------
@@ -181,4 +193,3 @@
 // -------------------------------------
 //   Inbox
 // -------------------------------------
-

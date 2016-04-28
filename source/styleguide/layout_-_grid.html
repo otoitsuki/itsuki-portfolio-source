@@ -36,6 +36,11 @@
       
         
         
+          
+        
+      
+        
+        
       
         
         
@@ -53,6 +58,12 @@
       
         
         
+      
+        
+        
+      
+        
+        
           
         
       
@@ -60,6 +71,8 @@
         
       
         
+        
+          
         
       
         
@@ -89,6 +102,15 @@
             
           
             
+          
+            
+              
+              
+                <li><a class="active" href="layout_-_grid.html">Grid</a></li>
+              
+            
+          
+            
               
               
                 <li><a href="layout_-_form.html">Form</a></li>
@@ -105,8 +127,10 @@
             
               
               
-                <li><a href="layout_-_hr.html">hr</a></li>
+                <li><a href="layout_-_hr.html">Hr</a></li>
               
+            
+          
             
           
             
@@ -123,11 +147,6 @@
             
           
             
-              
-              
-                <li><a class="active" href="layout_-_grid.html">Grid</a></li>
-              
-            
           
             
               
@@ -142,6 +161,17 @@
         
           <h3>Structure</h3>
           <ul>
+          
+            
+          
+            
+              
+              
+                <li><a href="structure_-_contentwrapper.html">ContentWrapper</a></li>
+              
+            
+          
+            
           
             
           
@@ -172,8 +202,62 @@
           
           </ul>
         
+          <h3>Component</h3>
+          <ul>
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="component_-_contentwrapper.html">ContentWrapper</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="components_-_other.html">Other</a></li>
+              
+            
+          
+            
+              
+              
+                <li><a href="components_-_media.html">Media</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+          </ul>
+        
           <h3>Components</h3>
           <ul>
+          
+            
+          
+            
+          
+            
           
             
           
@@ -209,7 +293,7 @@
           
           </ul>
         
-          <h3>Typography</h3>
+          <h3>Inbox</h3>
           <ul>
           
             
@@ -233,9 +317,53 @@
             
           
             
+          
+            
               
               
-                <li><a href="typography.html">Typography</a></li>
+                <li><a href="inbox.html">Inbox</a></li>
+              
+            
+          
+            
+          
+            
+          
+          </ul>
+        
+          <h3>Foundation</h3>
+          <ul>
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="foundation_-_typography.html">Typography</a></li>
               
             
           
@@ -266,7 +394,7 @@
           <ul bs-scrollspy-list data-offset="-30">
             
               
-                <li><a href="#Row">Row</a></li>
+                <li><a href="#Boostrap_Grid">Boostrap Grid</a></li>
               
             
           </ul>
@@ -277,42 +405,43 @@
 
 
 
-<h1 id="Row" class="styleguide">Row</h1>
-<p class="styleguide">Width-spanning blocks</p>
-<h2>一般 row</h2>
+<h1 id="Boostrap_Grid" class="styleguide">Boostrap Grid</h1>
 <div class="codeExample">
   <div class="exampleOutput">
-    <div class="row">content</div>
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nc">.row</span><span class="w"> </span>content</pre>
-    </div>
-  </div>
-</div>
+    <div class="MyComponent-wrapper">
+   <div class="MyComponent-child"></div>
+   <div class="MyComponent-child"></div>
+   <div class="MyComponent-child"></div>
+ </div>
 
-<h2>important bgcolor row</h2>
-<div class="codeExample">
-  <div class="exampleOutput">
-    <div class="row row--a">content</div>
   </div>
   <div class="codeBlock">
     <div class="highlight">
-      <pre><span class="nc">.row.row--a</span><span class="w"> </span>content</pre>
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"MyComponent-wrapper"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"MyComponent-child"</span><span class="nt">&gt;&lt;/div&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"MyComponent-child"</span><span class="nt">&gt;&lt;/div&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"MyComponent-child"</span><span class="nt">&gt;&lt;/div&gt;</span>
+ <span class="nt">&lt;/div&gt;</span></pre>
     </div>
   </div>
 </div>
-<div class="codeExample">
-  <div class="exampleOutput">
-    <div class="row row--b">content</div>
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nc">.row.row--b</span><span class="w"> </span>content</pre>
-    </div>
-  </div>
-</div>
-
+<p class="styleguide"> 加上
+<code class="styleguide">css_example
+ .MyComponent-wrapper {
+   @include row;
+ }
+   .MyComponent-child {
+     @include column( (small: 12, tablet: 4, wide: 2) );
+   }
+</code>
+同等於
+<code class="styleguide">html_example
+`&lt;div class=&quot;MyComponent-wrapper row&quot;&gt;
+   &lt;div class=&quot;MyComponent-child col-xs-12 col-md-4 col-lg-2&quot;&gt;&lt;/div&gt;
+   &lt;div class=&quot;MyComponent-child col-xs-12 col-md-4 col-lg-2&quot;&gt;&lt;/div&gt;
+   &lt;div class=&quot;MyComponent-child col-xs-12 col-md-4 col-lg-2&quot;&gt;&lt;/div&gt;
+ &lt;/div&gt;`
+</code></p>
         </div>
       </div>
     </div>
@@ -347,9 +476,41 @@
               
               
               {
+              "title": "Row",
+              "breadcrumb": "Layout - ContentWrapper > Row",
+              "path": "layout_-_contentwrapper.html#Row"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
               "title": "Block",
-              "breadcrumb": "Layout - ContentWrapper > Block",
-              "path": "layout_-_contentwrapper.html#Block"
+              "breadcrumb": "Structure - ContentWrapper > Block",
+              "path": "structure_-_contentwrapper.html#Block"
+              },
+            
+              
+              
+              {
+              "title": "Container",
+              "breadcrumb": "Structure - ContentWrapper > Container",
+              "path": "structure_-_contentwrapper.html#Container"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Boostrap Grid",
+              "breadcrumb": "Layout - Grid > Boostrap Grid",
+              "path": "layout_-_grid.html#Boostrap_Grid"
               },
             
           
@@ -370,6 +531,22 @@
               "title": "Form",
               "breadcrumb": "Layout - Form > Form",
               "path": "layout_-_form.html#Form"
+              },
+            
+              
+              
+              {
+              "title": "Form Address",
+              "breadcrumb": "Layout - Form > Form Address",
+              "path": "layout_-_form.html#Form_Address"
+              },
+            
+              
+              
+              {
+              "title": "Form Amount Contril",
+              "breadcrumb": "Layout - Form > Form Amount Contril",
+              "path": "layout_-_form.html#Form_Amount_Contril"
               },
             
               
@@ -400,8 +577,20 @@
               
               {
               "title": "Hr",
-              "breadcrumb": "Layout - hr > Hr",
+              "breadcrumb": "Layout - Hr > Hr",
               "path": "layout_-_hr.html#Hr"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Icon item",
+              "breadcrumb": "Component - ContentWrapper > Icon item",
+              "path": "component_-_contentwrapper.html#Icon_item"
               },
             
           
@@ -483,9 +672,9 @@
               
               
               {
-              "title": "Row",
-              "breadcrumb": "Layout - Grid > Row",
-              "path": "layout_-_grid.html#Row"
+              "title": "Pagination",
+              "breadcrumb": "Inbox > Pagination",
+              "path": "inbox.html#Pagination"
               },
             
           
@@ -508,8 +697,8 @@
               
               {
               "title": "Title",
-              "breadcrumb": "Typography > Title",
-              "path": "typography.html#Title"
+              "breadcrumb": "Foundation - Typography > Title",
+              "path": "foundation_-_typography.html#Title"
               },
             
           

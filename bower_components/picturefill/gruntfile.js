@@ -8,12 +8,12 @@
     // Project configuration.
     grunt.initConfig({
       // Metadata.
-      pkg: pkg = grunt.file.readJSON("picturefill.json"),
-      banner: "/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - " +
+      pkg: pkg = grunt.file.readJSON("package.json"),
+      banner: "/*! <%= pkg.name %> - v<%= pkg.version %> - " +
         "<%= grunt.template.today('yyyy-mm-dd') %>\n" +
-        "<%= pkg.homepage ? '* ' + pkg.homepage + '\\n' : '' %>" +
-        "* Copyright (c) <%= grunt.template.today('yyyy') %> <%= pkg.author.name %>;" +
-        " Licensed <%= _.pluck(pkg.licenses, 'type').join(', ') %> */\n",
+        "<%= pkg.homepage ? ' * ' + pkg.homepage + '\\n' : '' %>" +
+        " * Copyright (c) <%= grunt.template.today('yyyy') %> https://github.com/scottjehl/picturefill/blob/master/Authors.txt;" +
+        " Licensed <%= pkg.license %>\n */\n",
       // Task configuration.
       clean: {
         files: [ "dist" ]
@@ -122,7 +122,7 @@
     grunt.loadNpmTasks("grunt-gh-pages");
     grunt.loadNpmTasks("grunt-release");
 
-	// Default task.
+  // Default task.
     grunt.registerTask("default", [ "jscs", "test", "clean", "concat", "copy", "uglify" ]);
     grunt.registerTask("test", [ "jscs", "jshint", "qunit" ]);
     grunt.registerTask("publish", [ "gh-pages" ]);

@@ -1,0 +1,32 @@
+/*doc
+---
+title: Icon item
+category: Component - ContentWrapper
+---
+*/
+
+.icon-item {
+  a {
+    @extend %clearfix;
+    display: block;
+    line-height: 1;
+    margin-top: 0;
+    color: lighten($c-text,10);
+  }
+  figure {
+    @extend %tC;
+    width: 100%;
+    margin: 0;
+    padding: 5px;
+
+    .icon-img {
+      // max-height: pxtorem(25px);
+    }
+
+    .icon-label {
+      font-size: $b-fontSize-xs;
+      display: block;
+      margin-top: 5px;
+    }
+  }
+}
