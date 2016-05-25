@@ -1,0 +1,54 @@
+doctype 5
+html lang="zh-tw" 
+  head
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width initial-scale=1"
+    title 
+        = ( current_page.data.title ? current_page.data.title : data.metadata.title)
+    meta http-equiv="X-UA-Compatible" content="IE=edge"
+    meta name="description" content= data.metadata.ogimage
+    meta name="author" content= data.metadata.author
+
+    meta content= data.metadata.title property="og:title"
+    meta content= data.metadata.name property="og:site_name"
+    meta content= data.metadata.url property="og:url"
+    meta content= data.metadata.description property="og:description"
+    meta content= data.metadata.ogimage property="og:image"
+    meta content= data.metadata.ogtype property="og:type"
+
+    link href="assets/images/favicon.png" rel="icon" type="imagex-icon"
+    link href="assets/images/favicon.png" rel="shortcut icon" type="imagex-icon"
+    
+    = stylesheet_link_tag "style.css"
+    = partial "partials/fonts"
+
+    /[if lt IE 9]
+      script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"
+      
+    = javascript_include_tag "analytics.js"
+
+  
+  body
+    .page
+        = partial '/partials/header'
+        .grid-s
+            .content
+              .works-data
+                h2.title.title--page = current_page.data.worksTitle
+                .metadata
+                  span.time = current_page.data.worksTime
+                  span.tantou = current_page.data.worksTantou
+                img src= current_page.data.worksImg
+                p.info = current_page.data.worksInfo
+              .works-content
+                = yield    
+        = partial '/partials/footer'
+    
+
+    script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"
+    = javascript_include_tag "main.js"
+    
+    = yield_content :page_javascript
+    
+
+      

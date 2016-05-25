@@ -11,31 +11,36 @@
 
 // ----- Palette ----- //
 
-$c-highlight: #D0021B; // = base color
-$c-highlight-dark: #81000F; 
-$c-highlight-invert: #333333;
 
-$c-important: #e51c23; //red
+$c-highlight: #2196F3;
+$c-highlight-invert: #333333;
+$c-highlight-dark: darken($c-highlight,10);
+$c-subhighlight: #00ADEF;
+$c-subhighlight-dark: #009dd6;
+$c-subcolor: #F57F17;
+
 // ----- Base ----- //
 
-$c-text: #111;
-$c-text-invert: white;
-$c-background: #ffffff;
 $c-background-invert: #333333;
+$c-background: #ffffff;
+$c-text-invert: white;
+$c-text: #111111;
 
-$c-link: $c-highlight;
-$c-link-hover: lighten($c-link, 10);
+$c-link: #0778CD;
+$c-link-hover: darken($c-link, 10);
 $c-link-active: adjust_hue($c-link, 12);
-$c-link-visited: darken($c-link, 10);
+$c-link-visited: darken($c-link, 20);
 $c-link-focus: $c-link-hover;
 
 $c-selected-font: #fff;
-$c-selected-background: darken(adjust_hue($c-highlight,180), 6);
+$c-selected-background: #0086AB;
 
 $c-invalid-background: #f0dddd;
 
 
-
+// ----- Typography ----- //
+$c-important: #e51c23; //red
+$c-title: #555555;
 
 
 // -------------------------------------

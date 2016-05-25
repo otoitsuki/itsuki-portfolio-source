@@ -20,20 +20,23 @@ html lang="zh-tw"
     link href="assets/images/favicon.png" rel="shortcut icon" type="imagex-icon"
     
     = stylesheet_link_tag "style.css"
-    = partial "partials/fonts"
-
+    link href="https://fonts.googleapis.com/css?family=Dosis|Slabo+27px" rel="stylesheet" type="text/css"
     /[if lt IE 9]
       script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"
       
     = javascript_include_tag "analytics.js"
 
+  
   body
     .page
+
       = yield
+    
+      = partial '/partials/footer'
     
 
     script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"
-    
+    = javascript_include_tag "main.js"
     = yield_content :page_javascript
     
 

@@ -17,7 +17,6 @@ var gulp = require('gulp'),
     hologram = require('gulp-hologram');
     browserSync = require('browser-sync').create(),
     livereload = require('gulp-livereload'),
-    del = require('del'),
     webstandards = require('gulp-webstandards'),
     lint = require('gulp-eslint');
 
@@ -79,10 +78,10 @@ gulp.task('hologram', function() {
 
 
 // browserSync Setup
-gulp.task('js-watch', ['scripts'], browserSync.reload);
-gulp.task('css-watch', ['styles'], browserSync.reload);
-gulp.task('img-watch', ['images'], browserSync.reload);
-gulp.task('html-watch', ['html'], browserSync.reload);
+// gulp.task('js-watch', ['scripts'], browserSync.reload);
+// gulp.task('css-watch', ['styles'], browserSync.reload);
+// gulp.task('img-watch', ['images'], browserSync.reload);
+// gulp.task('html-watch', ['html'], browserSync.reload);
 
 
 // browserSync Server
@@ -90,11 +89,11 @@ gulp.task('serve', function () {
 
     gulp.start('styles', 'scripts' , 'images', 'html');
     // Serve files from the root of this project
-    browserSync.init({
-        server: {
-            baseDir: "source/"
-        }
-    });
+    // browserSync.init({
+    //     server: {
+    //         baseDir: "source/"
+    //     }
+    // });
 
     // Watch .scss files
     gulp.watch('source/sass/**/*', ['css-watch']);
