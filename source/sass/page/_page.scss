@@ -16,6 +16,6 @@
 
 .content {
 	@extend %clearfix;
-	padding-top: 48px;
-	padding-bottom: 72px;
+	padding-top: $b-space-l;
+	padding-bottom: $b-space-l;
 }

@@ -37,19 +37,6 @@ body, select, input, textarea {
   min-height: 100vh;
 }
 
-// -------------------------------------
-//   Block Content
-// -------------------------------------
-
-ul, ol, p, table {
-  margin-bottom: $b-fontSize * 1.43;
-  margin-top: 0;
-}
-
-li {
-  // margin-bottom: $b-space-s;
-  margin-top: 0;
-}
 
 // -------------------------------------
 //   Inline Content
@@ -116,7 +103,8 @@ ul, ol, a, table {
 
 p {
   @include font-size($b-fontSize);
-  line-height: 1.8;
+  line-height: $b-lineHeight;
+  margin-top: 0;
 }
 
 li > a {

@@ -31,3 +31,31 @@
 		margin-bottom:36px; 
 	}
 }
+
+.works-content {
+	img, video, iframe, p , ol, ul {
+		margin-bottom: $b-space-l;
+	}
+	.video {
+		@extend %tC;
+		video {
+			max-width: 50%;
+			border: 1px #aaa solid;
+		}
+	}
+}
+
+.works-role {
+	.role-list {
+		line-height: 2;
+		dt {
+			@include font-size(18px);
+			font-weight: bold;
+			color: #111;
+		}
+		dd {
+			margin-left: 0;
+			margin-bottom: $b-space;
+		}
+	}
+}

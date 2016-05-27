@@ -115,7 +115,7 @@ gulp.task('serve', function () {
 gulp.task('watch', function() {
 
   // Watch .scss files
-  gulp.watch('source/sass/**/*', ['styles','hologram']);
+  gulp.watch('source/sass/**/*', ['styles']);
 
   // Watch .js files
   gulp.watch('source/javascript/**/*', ['scripts']);
