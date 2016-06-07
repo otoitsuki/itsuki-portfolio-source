@@ -3,7 +3,7 @@
 // 載入外掛
 // ========================================================
 
-var gulp = require('gulp'),  
+var gulp = require('gulp'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     postcss = require('gulp-postcss'),
@@ -28,7 +28,7 @@ var gulp = require('gulp'),
 
 
 // CSS
-gulp.task('styles', function() { 
+gulp.task('styles', function() {
   return gulp.src('source/sass/**/*.scss')
       .pipe(sourcemaps.init())
       .pipe(sass().on('error', sass.logError))
@@ -40,7 +40,7 @@ gulp.task('styles', function() {
 });
 
 // JS
-gulp.task('scripts', function() {  
+gulp.task('scripts', function() {
   return gulp.src('source/javascript/**/*.js')
     .pipe(uglify())
     // .pipe(rename({suffix: '.min'}))
@@ -50,7 +50,7 @@ gulp.task('scripts', function() {
 });
 
 // IMG
-gulp.task('images', function() {  
+gulp.task('images', function() {
   return gulp.src('source/images/**/*')
     .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
     .pipe(gulp.dest('source/assets/images'))
@@ -60,7 +60,7 @@ gulp.task('images', function() {
 
 
 // HTML
-gulp.task('html', function() {  
+gulp.task('html', function() {
   return gulp.src('source/**/*.slim')
     .pipe(notify({ message: 'Html task complete' }))
     .pipe(livereload({ start: true }));
@@ -137,14 +137,14 @@ gulp.task('watch', function() {
 // ========================================================
 
 // Gulp default 工作
-// gulp.task('default',['watch'],  function() {  
+// gulp.task('default',['watch'],  function() {
 //    gulp.start('styles', 'scripts' , 'images', 'html');
 // });
 
 
 // Gulp default 工作 browserSync Ver.
-gulp.task('default',['watch'],  function() {  
-   gulp.start('styles', 'scripts' , 'images', 'html', 'hologram');
+gulp.task('default',['watch'],  function() {
+   gulp.start('styles', 'scripts' , 'images', 'html');
 });
 
 // ========================================================
