@@ -3,7 +3,7 @@
 (function() {
   var rssUrl = 'http://feeds.feedburner.com/otoitsuki',
     	rssNum = 5,
-    	rssJson = '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=' + rssNum + '&q=' + rssUrl;
+    	rssJson = 'http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=' + rssNum + '&q=' + rssUrl;
 
   $.ajax({
       url: rssJson,
@@ -50,7 +50,7 @@
           // '<div class="article-content">' + content + '</div>' +
           '</div>' +
           '</div>';
-        
+
         $('.article-list').append(entry);
       })
 
