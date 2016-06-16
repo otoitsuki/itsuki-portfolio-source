@@ -52,6 +52,7 @@
 
 .works-group {
 	@extend %clearfix;
+	margin-bottom: $b-space-l;
 }
 
 .works-group > .mod-works {
@@ -105,7 +106,7 @@
 		content: "";
 		background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(156,156,156,0) 25%,rgba(208,208,208,1) 100%); /* W3C */		display: block;
 		height: 12px;
-	}	
+	}
 
 
 }
@@ -173,18 +174,18 @@
 
 .slider > .active-slide { display: block; }
 
-.works-slideshow .arrow-prev ,.works-slideshow .arrow-next { 
-	position: absolute; 
-	top: 50%; 
-	-webkit-transform: translateY(-50%); 
-	transform: translateY(-50%); 
-	font-size: 3rem; 
-	text-decoration: none; 
-	color: #fff; 
-	@include bg-rgba(#000,0.7); 
-	cursor: pointer; 
+.works-slideshow .arrow-prev ,.works-slideshow .arrow-next {
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	font-size: 3rem;
+	text-decoration: none;
+	color: #fff;
+	@include bg-rgba(#000,0.7);
+	cursor: pointer;
 	padding: 10px 20px 10px 20px;
 	border-radius: 6px;
 }
-.works-slideshow .arrow-prev { left: 10px; } 
+.works-slideshow .arrow-prev { left: 10px; }
 .works-slideshow .arrow-next { right: 10px; }
